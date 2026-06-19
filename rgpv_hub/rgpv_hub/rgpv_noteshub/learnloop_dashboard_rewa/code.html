@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>LearnLoop Dashboard - Rewa, MP</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#bdc2ff",
+                        "surface": "#f7f9fb",
+                        "secondary-fixed": "#d5e3fc",
+                        "primary": "#000666",
+                        "background": "#f7f9fb",
+                        "surface-dim": "#d8dadc",
+                        "on-tertiary-fixed-variant": "#930010",
+                        "surface-tint": "#4c56af",
+                        "secondary-container": "#d5e3fc",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#670008",
+                        "surface-bright": "#f7f9fb",
+                        "tertiary": "#400003",
+                        "on-secondary-fixed-variant": "#3a485b",
+                        "on-surface": "#191c1e",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb3ac",
+                        "on-tertiary-fixed": "#410003",
+                        "on-surface-variant": "#454652",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#1a237e",
+                        "on-secondary-fixed": "#0d1c2e",
+                        "inverse-surface": "#2d3133",
+                        "primary-fixed": "#e0e0ff",
+                        "on-tertiary-container": "#ff635b",
+                        "tertiary-fixed": "#ffdad6",
+                        "primary-fixed-dim": "#bdc2ff",
+                        "error-container": "#ffdad6",
+                        "outline": "#767683",
+                        "surface-container": "#eceef0",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#c6c5d4",
+                        "on-primary-container": "#8690ee",
+                        "surface-variant": "#e0e3e5",
+                        "on-background": "#191c1e",
+                        "surface-container-low": "#f2f4f6",
+                        "on-primary-fixed": "#000767",
+                        "surface-container-high": "#e6e8ea",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "secondary-fixed-dim": "#b9c7df",
+                        "secondary": "#515f74",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#343d96",
+                        "on-secondary-container": "#57657a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "md": "16px",
+                        "gutter": "24px",
+                        "xs": "4px",
+                        "sidebar-width": "280px",
+                        "lg": "24px",
+                        "xl": "40px",
+                        "sm": "8px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "button": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "h1": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "h3": ["Inter"],
+                        "body-md": ["Inter"],
+                        "h2": ["Inter"]
+                    },
+                    "fontSize": {
+                        "button": ["16px", { "lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "h1": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "h3": ["24px", { "lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400" }],
+                        "h2": ["32px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            background-color: #f7f9fb;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="font-body-md text-on-background">
+    <!-- Sidebar Navigation -->
+    <aside
+        class="fixed left-0 top-0 flex flex-col h-full overflow-y-auto w-[280px] bg-white border-r border-slate-100 z-50 hidden md:flex">
+        <div class="text-2xl font-black text-indigo-900 px-6 py-8">
+            LearnLoop Academic
+        </div>
+        <nav class="flex-1 px-4 space-y-1">
+            <a class="flex items-center px-4 py-3 bg-slate-50 text-indigo-900 border-l-4 border-indigo-900 transition-all duration-200 ease-in-out font-label-sm text-sm"
+                href="../learnloop_dashboard_rewa/code.html">
+                <span class="material-symbols-outlined mr-3" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+            <a class="flex items-center px-4 py-3 text-slate-600 hover:bg-slate-100 hover:text-indigo-800 transition-all duration-200 ease-in-out font-label-sm text-sm"
+                href="../semester_notes/code.html">
+                <span class="material-symbols-outlined mr-3" data-icon="library_books">library_books</span>
+                Notes Library
+            </a>
+            <a class="flex items-center px-4 py-3 text-slate-600 hover:bg-slate-100 hover:text-indigo-800 transition-all duration-200 ease-in-out font-label-sm text-sm"
+                href="../past_papers/code.html">
+                <span class="material-symbols-outlined mr-3" data-icon="history_edu">history_edu</span>
+                Previous Papers
+            </a>
+            <a class="flex items-center px-4 py-3 text-slate-600 hover:bg-slate-100 hover:text-indigo-800 transition-all duration-200 ease-in-out font-label-sm text-sm"
+                href="../course_syllabus/code.html">
+                <span class="material-symbols-outlined mr-3" data-icon="menu_book">menu_book</span>
+                Official Syllabus
+            </a>
+            <a class="flex items-center px-4 py-3 text-slate-600 hover:bg-slate-100 hover:text-indigo-800 transition-all duration-200 ease-in-out font-label-sm text-sm"
+                href="../rgpv_hub_home/code.html">
+                <span class="material-symbols-outlined mr-3" data-icon="home">home</span>
+                RGPV Home
+            </a>
+            <div class="pt-8 pb-4 px-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest">Administrative
+            </div>
+            <a class="flex items-center px-4 py-3 text-slate-600 hover:bg-slate-100 hover:text-indigo-800 transition-all duration-200 ease-in-out font-label-sm text-sm"
+                href="#">
+                <span class="material-symbols-outlined mr-3" data-icon="settings">settings</span>
+                Settings
+            </a>
+        </nav>
+        <div class="p-6">
+            <div class="bg-primary-container rounded-xl p-4 text-white">
+                <p class="text-xs font-semibold opacity-80 mb-1">PRO PLAN</p>
+                <p class="text-sm mb-3">Get unlimited access to premium notes.</p>
+                <button class="w-full py-2 bg-white text-indigo-900 rounded font-button text-sm">Upgrade Now</button>
+            </div>
+        </div>
+    </aside>
+    <!-- Main Canvas -->
+    <main class="md:ml-[280px] min-h-screen">
+        <!-- TopAppBar -->
+        <header
+            class="sticky top-0 z-40 bg-white border-b border-slate-200 shadow-none flex justify-between items-center w-full px-6 h-16">
+            <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined text-slate-600 md:hidden" data-icon="menu">menu</span>
+                <div class="text-xl font-bold tracking-tight text-indigo-900">LearnLoop</div>
+            </div>
+            <!-- Search Bar: Prominent Search Bar from Guidance -->
+            <div class="hidden md:flex flex-1 max-w-2xl mx-12">
+                <div class="relative w-full">
+                    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
+                        data-icon="search">search</span>
+                    <input
+                        class="w-full bg-slate-100 border-transparent focus:border-indigo-900 focus:ring-0 rounded-lg py-2 pl-10 pr-4 text-sm transition-all duration-200"
+                        placeholder="Search for subjects, notes, or semesters..." type="text" />
+                </div>
+            </div>
+            <div class="flex items-center gap-6">
+                <div class="hidden lg:flex items-center text-slate-500 text-sm font-medium gap-2">
+                    <span class="material-symbols-outlined text-indigo-900" data-icon="schedule">schedule</span>
+                    <span>10:45 AM</span>
+                </div>
+                <div class="flex items-center text-slate-700 font-semibold text-sm gap-2">
+                    <span class="material-symbols-outlined text-indigo-600" data-icon="location_on">location_on</span>
+                    Rewa, MP
+                </div>
+                <button
+                    class="material-symbols-outlined text-slate-600 p-2 hover:bg-slate-50 rounded-full transition-colors"
+                    data-icon="notifications">notifications</button>
+                <div class="w-8 h-8 rounded-full bg-indigo-100 border border-indigo-200 overflow-hidden">
+                    <img class="w-full h-full object-cover"
+                        data-alt="professional portrait of a smiling student wearing a formal academic blazer with blurred library background"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxfrCKQa9CW1RUwPmT4aeKpWWIjtwd1kjhCkaj-TNmiMFER6zc3LlgP1ujZFWe0R9kTXJm52hpEA1-EYUK-iAbQJIthHV0hr8JM6Z6LaeFt4oHxQkzJmOj2LNurmsy-j2-cv0bQNSwtMpmPtZ0RX5wgEK7j4tiSVhJVe6FZUJdn7j8rohlOwXrufx6DZh9Xcsp0yrfI2QNBoE59a0SqujfyoOu_TQCFMJ6qI8VzeDCQHloJUfaObVEZ_Xo3yECOziWWEmBnq5KDIQ" />
+                </div>
+            </div>
+        </header>
+        <div class="p-xl max-w-container-max mx-auto">
+            <!-- Hero / Welcome Section -->
+            <section class="mb-lg">
+                <h1 class="font-h1 text-h1 text-primary mb-2">Welcome back, Scholar</h1>
+                <p class="font-body-lg text-body-lg text-secondary">Your academic journey continues from where you left
+                    off in Rewa.</p>
+            </section>
+            <!-- Semester Selection Grid -->
+            <section class="mb-xl">
+                <div class="flex items-center justify-between mb-md">
+                    <h2 class="font-h2 text-h2 text-on-surface">Academic Semesters</h2>
+                    <a class="text-indigo-900 font-semibold text-sm flex items-center hover:underline" href="#">
+                        View Curriculum <span class="material-symbols-outlined text-sm ml-1"
+                            data-icon="arrow_forward">arrow_forward</span>
+                    </a>
+                </div>
+                <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4">
+                    <!-- Dynamic Generation of Semester Cards -->
+                    <button
+                        class="group p-4 bg-white border border-slate-200 rounded-xl hover:border-indigo-900 hover:shadow-sm transition-all duration-200 flex flex-col items-center justify-center gap-2">
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-indigo-900">SEM</span>
+                        <span class="text-2xl font-black text-indigo-900">01</span>
+                    </button>
+                    <button
+                        class="group p-4 bg-white border border-slate-200 rounded-xl hover:border-indigo-900 hover:shadow-sm transition-all duration-200 flex flex-col items-center justify-center gap-2">
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-indigo-900">SEM</span>
+                        <span class="text-2xl font-black text-indigo-900">02</span>
+                    </button>
+                    <button
+                        class="group p-4 bg-white border border-slate-200 rounded-xl hover:border-indigo-900 hover:shadow-sm transition-all duration-200 flex flex-col items-center justify-center gap-2">
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-indigo-900">SEM</span>
+                        <span class="text-2xl font-black text-indigo-900">03</span>
+                    </button>
+                    <button
+                        class="group p-4 bg-white border border-slate-200 rounded-xl hover:border-indigo-900 hover:shadow-sm transition-all duration-200 flex flex-col items-center justify-center gap-2">
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-indigo-900">SEM</span>
+                        <span class="text-2xl font-black text-indigo-900">04</span>
+                    </button>
+                    <button
+                        class="group p-4 bg-indigo-900 border border-indigo-900 rounded-xl shadow-md flex flex-col items-center justify-center gap-2">
+                        <span class="text-xs font-bold text-white opacity-70">SEM</span>
+                        <span class="text-2xl font-black text-white">05</span>
+                    </button>
+                    <button
+                        class="group p-4 bg-white border border-slate-200 rounded-xl hover:border-indigo-900 hover:shadow-sm transition-all duration-200 flex flex-col items-center justify-center gap-2">
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-indigo-900">SEM</span>
+                        <span class="text-2xl font-black text-indigo-900">06</span>
+                    </button>
+                    <button
+                        class="group p-4 bg-white border border-slate-200 rounded-xl hover:border-indigo-900 hover:shadow-sm transition-all duration-200 flex flex-col items-center justify-center gap-2">
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-indigo-900">SEM</span>
+                        <span class="text-2xl font-black text-indigo-900">07</span>
+                    </button>
+                    <button
+                        class="group p-4 bg-white border border-slate-200 rounded-xl hover:border-indigo-900 hover:shadow-sm transition-all duration-200 flex flex-col items-center justify-center gap-2">
+                        <span class="text-xs font-bold text-slate-400 group-hover:text-indigo-900">SEM</span>
+                        <span class="text-2xl font-black text-indigo-900">08</span>
+                    </button>
+                </div>
+            </section>
+            <!-- Subject Bento Grid -->
+            <section class="mb-xl">
+                <h2 class="font-h2 text-h2 text-on-surface mb-md">Current Subjects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+                    <!-- Card 1: Compiler Design -->
+                    <div
+                        class="bg-white rounded-xl border border-slate-200 overflow-hidden flex flex-col group hover:shadow-lg transition-shadow duration-300">
+                        <div class="h-32 bg-slate-100 relative overflow-hidden">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                data-alt="abstract digital representation of syntax trees and code compilation logic in deep blue and indigo tones"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYn15G6fOfvWVIgnESHrz0CO2CGuSVRt7QyB85-mogz4Yui4lcjInFpASgn6XlYHF3e1KQAPsm29gsAfSG5_XDuiYDq6awt_IsIwbv2RzHuKjNEU-LeLp192J9_89VkFG-T9iCA3mA9JEz9VjXVkKbVR7rTgUCP-X6FUkPX8jfY8QeboDa-J5Wxi1tJy_E3JcQi2xbbILndzBrZaB1wDB3CZU-YvbmYdg-pCXemFO0fllbJLbnbgTO5xuV4tkBN37f7ZtrFrWLAx4" />
+                            <div
+                                class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold text-indigo-900 uppercase">
+                                Core Technical</div>
+                        </div>
+                        <div class="p-md flex-1">
+                            <h3 class="font-h3 text-h3 text-indigo-900 mb-1">Compiler Design</h3>
+                            <p class="text-sm text-slate-500 mb-4 line-clamp-2">Principles of language translation,
+                                lexical analysis, and syntax-directed translation.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span
+                                    class="px-2 py-0.5 bg-slate-50 border border-slate-100 rounded-full text-[10px] font-medium text-slate-600">CS
+                                    501</span>
+                                <span
+                                    class="px-2 py-0.5 bg-slate-50 border border-slate-100 rounded-full text-[10px] font-medium text-slate-600">Unit
+                                    1-5</span>
+                            </div>
+                            <div class="grid grid-cols-2 gap-3 mt-auto">
+                                <button
+                                    class="py-2 bg-indigo-900 text-white rounded font-button text-sm flex items-center justify-center gap-1 active:scale-95 transition-transform">
+                                    <span class="material-symbols-outlined text-sm"
+                                        data-icon="description">description</span> Full Notes
+                                </button>
+                                <button
+                                    class="py-2 border border-slate-200 text-indigo-900 rounded font-button text-sm flex items-center justify-center gap-1 hover:bg-slate-50 active:scale-95 transition-transform">
+                                    <span class="material-symbols-outlined text-sm" data-icon="history">history</span>
+                                    Papers
+                                </button>
+                            </div>
+                        </div>
+                        <div class="px-md py-3 bg-slate-50 border-t border-slate-100 flex justify-between items-center">
+                            <span class="text-[10px] text-slate-400 font-medium italic">Last updated: APR, 2026</span>
+                            <span class="material-symbols-outlined text-slate-300 text-lg"
+                                data-icon="verified">verified</span>
+                        </div>
+                    </div>
+                    <!-- Card 2: Machine Learning -->
+                    <div
+                        class="bg-white rounded-xl border border-slate-200 overflow-hidden flex flex-col group hover:shadow-lg transition-shadow duration-300">
+                        <div class="h-32 bg-slate-100 relative overflow-hidden">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                data-alt="visual representation of neural network connections and data nodes in glowing electric blue on a dark background"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxK7fcQwX3bz0NzngQXSkGDBS37afLRCs5i7G2MotW8WzGi4DMM5LbA8uaOxwcXzGSvA6TlG5PmnQqLbURVSfBrHxnK9_9SBYOTpTqzAqCl4nmHKf-AaSeO1dYUNxiw8bFu4wKN4L-6dcFfuwTkLeY9FL4L_J1CPUsevDqDMc03OHpoEIukbUdik81Ze9hAyxQAiVmUpnSk7EApaTFvtXejV4tpzo52xNE3ovf33OL-2UGpAG4G1L_8_IbUv-N1NNVCJvyWQ55kjg" />
+                            <div
+                                class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold text-indigo-900 uppercase">
+                                Advanced Elective</div>
+                        </div>
+                        <div class="p-md flex-1">
+                            <h3 class="font-h3 text-h3 text-indigo-900 mb-1">Machine Learning</h3>
+                            <p class="text-sm text-slate-500 mb-4 line-clamp-2">Foundations of supervised and
+                                unsupervised learning, regression, and neural networks.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span
+                                    class="px-2 py-0.5 bg-slate-50 border border-slate-100 rounded-full text-[10px] font-medium text-slate-600">CS
+                                    502</span>
+                                <span
+                                    class="px-2 py-0.5 bg-slate-50 border border-slate-100 rounded-full text-[10px] font-medium text-slate-600">Math
+                                    Focus</span>
+                            </div>
+                            <div class="grid grid-cols-2 gap-3 mt-auto">
+                                <button
+                                    class="py-2 bg-indigo-900 text-white rounded font-button text-sm flex items-center justify-center gap-1 active:scale-95 transition-transform">
+                                    <span class="material-symbols-outlined text-sm"
+                                        data-icon="description">description</span> Full Notes
+                                </button>
+                                <button
+                                    class="py-2 border border-slate-200 text-indigo-900 rounded font-button text-sm flex items-center justify-center gap-1 hover:bg-slate-50 active:scale-95 transition-transform">
+                                    <span class="material-symbols-outlined text-sm" data-icon="history">history</span>
+                                    Papers
+                                </button>
+                            </div>
+                        </div>
+                        <div class="px-md py-3 bg-slate-50 border-t border-slate-100 flex justify-between items-center">
+                            <span class="text-[10px] text-slate-400 font-medium italic">Last updated: APR, 2026</span>
+                            <span class="material-symbols-outlined text-slate-300 text-lg"
+                                data-icon="verified">verified</span>
+                        </div>
+                    </div>
+                    <!-- Card 3: Project Management -->
+                    <div
+                        class="bg-white rounded-xl border border-slate-200 overflow-hidden flex flex-col group hover:shadow-lg transition-shadow duration-300">
+                        <div class="h-32 bg-slate-100 relative overflow-hidden">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                data-alt="clean desk top view with architectural blueprints, a modern laptop, and professional planning tools in soft morning light"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuABPe_n-DhNFTry19xAYXJkfql1hcU7RX_00C03oN6QYSrx87cnZ0JOehJN0PCpxc98Y6cfBcO8BwP3CYKmrPOjB9f7jti6ZftsPopMDwhVIRvOFibKC-a899DFAO1RYua-D020roUQnZqljFay1j14eIGI8GwexZMQmoYvwkio-zC5qivi218bE-kmb8495-orKOC68yda1cBMwMuwt5TEc4Nme5PpGwHXDwYTDIce2CnaQ1Ei1rcpTMQxVJurABMzA-VMHO0bqXo" />
+                            <div
+                                class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold text-indigo-900 uppercase">
+                                Management</div>
+                        </div>
+                        <div class="p-md flex-1">
+                            <h3 class="font-h3 text-h3 text-indigo-900 mb-1">Project Management</h3>
+                            <p class="text-sm text-slate-500 mb-4 line-clamp-2">Agile methodologies, project lifecycles,
+                                resource allocation, and risk management.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span
+                                    class="px-2 py-0.5 bg-slate-50 border border-slate-100 rounded-full text-[10px] font-medium text-slate-600">CS
+                                    503</span>
+                                <span
+                                    class="px-2 py-0.5 bg-slate-50 border border-slate-100 rounded-full text-[10px] font-medium text-slate-600">Skill-based</span>
+                            </div>
+                            <div class="grid grid-cols-2 gap-3 mt-auto">
+                                <button
+                                    class="py-2 bg-indigo-900 text-white rounded font-button text-sm flex items-center justify-center gap-1 active:scale-95 transition-transform">
+                                    <span class="material-symbols-outlined text-sm"
+                                        data-icon="description">description</span> Full Notes
+                                </button>
+                                <button
+                                    class="py-2 border border-slate-200 text-indigo-900 rounded font-button text-sm flex items-center justify-center gap-1 hover:bg-slate-50 active:scale-95 transition-transform">
+                                    <span class="material-symbols-outlined text-sm" data-icon="history">history</span>
+                                    Papers
+                                </button>
+                            </div>
+                        </div>
+                        <div class="px-md py-3 bg-slate-50 border-t border-slate-100 flex justify-between items-center">
+                            <span class="text-[10px] text-slate-400 font-medium italic">Last updated: APR, 2026</span>
+                            <span class="material-symbols-outlined text-slate-300 text-lg"
+                                data-icon="verified">verified</span>
+                        </div>
+                    </div>
+                    <!-- Card 4: Computer Network -->
+                    <div
+                        class="bg-white rounded-xl border border-slate-200 overflow-hidden flex flex-col group hover:shadow-lg transition-shadow duration-300">
+                        <div class="h-32 bg-slate-100 relative overflow-hidden">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                data-alt="server room with glowing status lights and organized ethernet cables in a high-tech data center environment"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwUlLsh5DIVguafRBWkWeIGs-zxuzgclY42uwsj3GnKbmuwv0aijpRKgGLB9jvo2UpnmtutipF9p_WJKVG7ObekYnRJx3NZ98RuqiD8EzHYlLVy8jRNjxkX00An_2dTxOyKPYe95F16CNI39wEl2-CyoWa1BUwap1pUVY6TENj5TqpoVzvZad_EYJQFDlM6LK9STLmipWU8IIXCnZEDjer6C7kgcnMvNXdQTrIn05RFxxQ1J89cmX87bqkY18EokDdd2nTqNqn1Xs" />
+                            <div
+                                class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold text-indigo-900 uppercase">
+                                Networking</div>
+                        </div>
+                        <div class="p-md flex-1">
+                            <h3 class="font-h3 text-h3 text-indigo-900 mb-1">Computer Network</h3>
+                            <p class="text-sm text-slate-500 mb-4 line-clamp-2">OSI model, TCP/IP protocols, wireless
+                                networking, and network security standards.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span
+                                    class="px-2 py-0.5 bg-slate-50 border border-slate-100 rounded-full text-[10px] font-medium text-slate-600">CS
+                                    504</span>
+                                <span
+                                    class="px-2 py-0.5 bg-slate-50 border border-slate-100 rounded-full text-[10px] font-medium text-slate-600">Practical
+                                    Lab</span>
+                            </div>
+                            <div class="grid grid-cols-2 gap-3 mt-auto">
+                                <button
+                                    class="py-2 bg-indigo-900 text-white rounded font-button text-sm flex items-center justify-center gap-1 active:scale-95 transition-transform">
+                                    <span class="material-symbols-outlined text-sm"
+                                        data-icon="description">description</span> Full Notes
+                                </button>
+                                <button
+                                    class="py-2 border border-slate-200 text-indigo-900 rounded font-button text-sm flex items-center justify-center gap-1 hover:bg-slate-50 active:scale-95 transition-transform">
+                                    <span class="material-symbols-outlined text-sm" data-icon="history">history</span>
+                                    Papers
+                                </button>
+                            </div>
+                        </div>
+                        <div class="px-md py-3 bg-slate-50 border-t border-slate-100 flex justify-between items-center">
+                            <span class="text-[10px] text-slate-400 font-medium italic">Last updated: APR, 2026</span>
+                            <span class="material-symbols-outlined text-slate-300 text-lg"
+                                data-icon="verified">verified</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Bottom Layout: Recent Papers & Quick Links -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+                <!-- Recent Papers Section -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center justify-between mb-md">
+                        <h2 class="font-h2 text-h2 text-on-surface">Recent Previous Year Papers</h2>
+                        <button class="text-indigo-900 font-semibold text-sm">View All</button>
+                    </div>
+                    <div class="space-y-4">
+                        <div
+                            class="flex items-center p-4 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 transition-colors cursor-pointer group">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-red-50 flex items-center justify-center text-red-600 mr-4">
+                                <span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-indigo-900">Database Management Systems - Final 6</h4>
+                                <p class="text-xs text-slate-500">RGPV Main Exam • Semester 4 • PDF (2.4 MB)</p>
+                            </div>
+                            <button class="material-symbols-outlined text-slate-400 group-hover:text-indigo-900"
+                                data-icon="download">download</button>
+                        </div>
+                        <div
+                            class="flex items-center p-4 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 transition-colors cursor-pointer group">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-red-50 flex items-center justify-center text-red-600 mr-4">
+                                <span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-indigo-900">Discrete Mathematics - Mid-Sem 2026</h4>
+                                <p class="text-xs text-slate-500">Autonomous Internal • Semester 3 • PDF (1.1 MB)</p>
+                            </div>
+                            <button class="material-symbols-outlined text-slate-400 group-hover:text-indigo-900"
+                                data-icon="download">download</button>
+                        </div>
+                        <div
+                            class="flex items-center p-4 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 transition-colors cursor-pointer group">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-red-50 flex items-center justify-center text-red-600 mr-4">
+                                <span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-indigo-900">Operating Systems - Backlog 2021</h4>
+                                <p class="text-xs text-slate-500">Special Exam • Semester 4 • PDF (3.8 MB)</p>
+                            </div>
+                            <button class="material-symbols-outlined text-slate-400 group-hover:text-indigo-900"
+                                data-icon="download">download</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Quick Links & Resources -->
+                <div class="space-y-gutter">
+                    <div class="bg-indigo-900 rounded-2xl p-6 text-white relative overflow-hidden">
+                        <div class="relative z-10">
+                            <h3 class="text-xl font-bold mb-2">Need Guidance?</h3>
+                            <p class="text-sm opacity-80 mb-4">Connect with seniors and professors for complex topic
+                                clarifications.</p>
+                            <button class="bg-white text-indigo-900 px-4 py-2 rounded-lg font-bold text-sm">Join Student
+                                Forum</button>
+                        </div>
+                        <div class="absolute -right-10 -bottom-10 opacity-10">
+                            <span class="material-symbols-outlined text-[120px]" data-icon="forum">forum</span>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl border border-slate-200 p-6">
+                        <h3 class="font-bold text-indigo-900 mb-4">Quick Links</h3>
+                        <div class="space-y-3">
+                            <a class="flex items-center text-sm text-slate-600 hover:text-indigo-900 transition-colors"
+                                href="#">
+                                <span class="material-symbols-outlined text-lg mr-3 text-slate-400"
+                                    data-icon="auto_stories">auto_stories</span>
+                                Syllabus Tracker
+                            </a>
+                            <a class="flex items-center text-sm text-slate-600 hover:text-indigo-900 transition-colors"
+                                href="#">
+                                <span class="material-symbols-outlined text-lg mr-3 text-slate-400"
+                                    data-icon="edit_note">edit_note</span>
+                                My Personal Notes
+                            </a>
+                            <a class="flex items-center text-sm text-slate-600 hover:text-indigo-900 transition-colors"
+                                href="#">
+                                <span class="material-symbols-outlined text-lg mr-3 text-slate-400"
+                                    data-icon="event">event</span>
+                                Exam Timetable
+                            </a>
+                            <a class="flex items-center text-sm text-slate-600 hover:text-indigo-900 transition-colors"
+                                href="#">
+                                <span class="material-symbols-outlined text-lg mr-3 text-slate-400"
+                                    data-icon="link">link</span>
+                                External Resources
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Progress Stepper (Additional Component from Guidance) -->
+                    <div class="bg-white rounded-xl border border-slate-200 p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-bold text-indigo-900">Course Progress</h3>
+                            <span class="text-xs font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded">68%</span>
+                        </div>
+                        <div class="w-full bg-slate-100 h-2 rounded-full mb-4 overflow-hidden">
+                            <div class="bg-indigo-600 h-full w-[68%] rounded-full"></div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-green-500 text-sm" data-icon="check_circle"
+                                    style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                <span class="text-xs text-slate-600">Internal Assessment 1</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-green-500 text-sm" data-icon="check_circle"
+                                    style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                <span class="text-xs text-slate-600">Lab Assignments</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-slate-300 text-sm"
+                                    data-icon="radio_button_unchecked">radio_button_unchecked</span>
+                                <span class="text-xs text-slate-600">End Semester Project</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- BottomNavBar (Mobile Only) -->
+    <nav
+        class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 px-4 md:hidden bg-white/80 backdrop-blur-md border-t border-slate-200 shadow-lg">
+        <a class="flex flex-col items-center justify-center text-indigo-900 scale-105" href="#">
+            <span class="material-symbols-outlined" data-icon="home"
+                style="font-variation-settings: 'FILL' 1;">home</span>
+            <span class="font-['Inter'] text-[11px] font-medium">Home</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-slate-400" href="#">
+            <span class="material-symbols-outlined" data-icon="import_contacts">import_contacts</span>
+            <span class="font-['Inter'] text-[11px] font-medium">Courses</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-slate-400" href="#">
+            <span class="material-symbols-outlined" data-icon="description">description</span>
+            <span class="font-['Inter'] text-[11px] font-medium">Notes</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-slate-400" href="#">
+            <span class="material-symbols-outlined" data-icon="person">person</span>
+            <span class="font-['Inter'] text-[11px] font-medium">Profile</span>
+        </a>
+    </nav>
+
+    <!-- Subject Modal -->
+    <div id="subjectModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm transition-opacity duration-300 opacity-0">
+        <div class="bg-white rounded-2xl shadow-xl w-full max-w-lg overflow-hidden transform scale-95 transition-transform duration-300">
+            <div class="p-6 border-b border-slate-100 flex justify-between items-center">
+                <div>
+                    <h3 class="text-xl font-bold text-indigo-900" id="modalTitle">Semester Subjects</h3>
+                    <p class="text-sm text-slate-500">RGPV Syllabus</p>
+                </div>
+                <button id="closeModalBtn" class="text-slate-400 hover:text-indigo-900 transition-colors p-2 rounded-full hover:bg-slate-50">
+                    <span class="material-symbols-outlined" data-icon="close">close</span>
+                </button>
+            </div>
+            <div class="p-6 max-h-[60vh] overflow-y-auto" id="modalSubjectsList">
+                <!-- Subjects will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const mobileMenuBtn = document.querySelector('.material-symbols-outlined[data-icon="menu"]') || document.querySelector('header button .material-symbols-outlined');
+        const sidebar = document.querySelector('aside');
+
+        if (mobileMenuBtn && sidebar) {
+            mobileMenuBtn.parentElement.addEventListener('click', () => {
+                sidebar.classList.toggle('-translate-x-full');
+                sidebar.classList.toggle('hidden');
+            });
+        }
+
+        const searchInput = document.querySelector('input[placeholder*="Search"]');
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                const term = e.target.value.toLowerCase();
+                const cards = document.querySelectorAll('.grid > div, section > div > div, .space-y-4 > div');
+
+                cards.forEach(card => {
+                    const text = card.innerText.toLowerCase();
+                    card.style.display = text.includes(term) ? '' : 'none';
+                });
+            });
+        }
+
+        const rgpvSubjects = {
+            '1': [
+                { code: 'BT101', name: 'Engineering Chemistry' },
+                { code: 'BT102', name: 'Mathematics-I' },
+                { code: 'BT103', name: 'English for Communication' },
+                { code: 'BT104', name: 'Basic Electrical & Electronics Engg.' },
+                { code: 'BT105', name: 'Engineering Graphics' }
+            ],
+            '2': [
+                { code: 'BT201', name: 'Engineering Physics' },
+                { code: 'BT202', name: 'Mathematics-II' },
+                { code: 'BT203', name: 'Basic Mechanical Engineering' },
+                { code: 'BT204', name: 'Basic Civil Engineering & Mechanics' },
+                { code: 'BT205', name: 'Basic Computer Engineering' }
+            ],
+            '3': [
+                { code: 'EX301', name: 'Energy & Environmental Engineering' },
+                { code: 'CS302', name: 'Discrete Structure' },
+                { code: 'CS303', name: 'Data Structure' },
+                { code: 'CS304', name: 'Digital Systems' },
+                { code: 'CS305', name: 'Object Oriented Programming' }
+            ],
+            '4': [
+                { code: 'CS401', name: 'Software Engineering' },
+                { code: 'CS402', name: 'Computer System Organization' },
+                { code: 'CS403', name: 'Analysis Design of Algorithm' },
+                { code: 'CS404', name: 'Communication Systems' },
+                { code: 'CS405', name: 'Data Base Management System' }
+            ],
+            '5': [
+                { code: 'CS501', name: 'Theory of Computation' },
+                { code: 'CS502', name: 'Database Management Systems' },
+                { code: 'CS503', name: 'Cyber Security' },
+                { code: 'CS504', name: 'Internet and Web Technology' },
+                { code: 'CS505', name: 'Departmental Elective' }
+            ],
+            '6': [
+                { code: 'CS601', name: 'Machine Learning' },
+                { code: 'CS602', name: 'Computer Networks' },
+                { code: 'CS603', name: 'Compiler Design' },
+                { code: 'CS604', name: 'Project Management' },
+                { code: 'CS605', name: 'Departmental Elective' }
+            ],
+            '7': [
+                { code: 'CS701', name: 'Cloud Computing' },
+                { code: 'CS702', name: 'Major Project-I' },
+                { code: 'CS703', name: 'Departmental Elective' },
+                { code: 'CS704', name: 'Open Elective' }
+            ],
+            '8': [
+                { code: 'CS801', name: 'Major Project-II' },
+                { code: 'CS802', name: 'Departmental Elective' },
+                { code: 'CS803', name: 'Open Elective' }
+            ]
+        };
+
+        const subjectModal = document.getElementById('subjectModal');
+        const modalInner = subjectModal?.querySelector('div');
+        const modalSubjectsList = document.getElementById('modalSubjectsList');
+        const modalTitle = document.getElementById('modalTitle');
+
+        function showSubjectModal(semNum) {
+            if(!subjectModal) return;
+            modalTitle.innerText = `Semester 0${semNum} Subjects`;
+            const subjects = rgpvSubjects[semNum];
+            
+            modalSubjectsList.innerHTML = `<div class="space-y-3">
+                ${subjects.map(sub => `
+                    <div class="flex items-center p-3 rounded-lg border border-slate-100 hover:bg-slate-50 transition-colors cursor-pointer group">
+                        <div class="w-12 h-12 rounded-lg bg-indigo-50 text-indigo-900 flex flex-col items-center justify-center font-bold text-[10px] mr-4 shrink-0 text-center leading-tight group-hover:bg-indigo-100 transition-colors">
+                            ${sub.code}
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-indigo-900 text-sm">${sub.name}</h4>
+                            <p class="text-xs text-slate-500">RGPV Syllabus Core</p>
+                        </div>
+                        <button class="material-symbols-outlined text-slate-400 group-hover:text-indigo-900 text-sm p-2 transition-colors" data-icon="chevron_right">chevron_right</button>
+                    </div>
+                `).join('')}
+            </div>`;
+
+            subjectModal.classList.remove('hidden');
+            subjectModal.classList.add('flex');
+            // Trigger reflow
+            void subjectModal.offsetWidth;
+            subjectModal.classList.remove('opacity-0');
+            modalInner.classList.remove('scale-95');
+        }
+
+        function closeSubjectModal() {
+            if(!subjectModal) return;
+            subjectModal.classList.add('opacity-0');
+            modalInner.classList.add('scale-95');
+            setTimeout(() => {
+                subjectModal.classList.add('hidden');
+                subjectModal.classList.remove('flex');
+            }, 300);
+        }
+
+        document.getElementById('closeModalBtn')?.addEventListener('click', closeSubjectModal);
+        subjectModal?.addEventListener('click', (e) => {
+            if (e.target === subjectModal) closeSubjectModal();
+        });
+
+        document.addEventListener('click', (e) => {
+            const target = e.target.closest('button, a');
+            if (!target) return;
+
+            const text = target.innerText.toLowerCase();
+
+            if (text.includes('download')) {
+                const fileName = target.closest('div')?.querySelector('h3, h4')?.innerText || "Document";
+                showNotification(`Downloading ${fileName}...`, 'success');
+            }
+
+            if (text.includes('view') || text.includes('full notes')) {
+                const subject = target.closest('div')?.querySelector('h3')?.innerText || "Subject";
+                showNotification(`Opening ${subject} viewer...`, 'info');
+            }
+
+            const isSemesterCard = target.classList.contains('group') && target.querySelector('span.text-2xl');
+            if (isSemesterCard) {
+                const semText = target.querySelector('span.text-2xl').innerText;
+                const semNum = parseInt(semText, 10).toString();
+                if (rgpvSubjects[semNum]) {
+                    showSubjectModal(semNum);
+                    return;
+                }
+            }
+
+            if (target.innerText.match(/SEM \d+/i) || target.innerText.match(/\d+/)) {
+                const semNum = target.innerText.replace(/\D/g, "");
+                if (semNum && semNum.length <= 2 && !isSemesterCard) {
+                    showNotification(`Loading resources for Semester ${semNum}...`, 'info');
+                }
+            }
+        });
+
+        function showNotification(message, type) {
+            const toast = document.createElement('div');
+            toast.className = `fixed bottom-20 right-5 px-6 py-3 rounded-xl shadow-2xl text-white font-bold transition-all transform translate-y-20 z-[100]`;
+            toast.style.backgroundColor = type === 'success' ? '#1A237E' : '#515f74';
+            toast.innerText = message;
+
+            document.body.appendChild(toast);
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-20');
+            }, 100);
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-20');
+                setTimeout(() => toast.remove(), 500);
+            }, 3000);
+        }
+
+        const timeElements = document.querySelectorAll('header span, .text-sm.font-medium.gap-2 span');
+        timeElements.forEach(el => {
+            if (el.innerText.includes(':')) {
+                setInterval(() => {
+                    const now = new Date();
+                    el.innerText = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                }, 1000);
+            }
+        });
+    </script>
+</body>
+
+</html>

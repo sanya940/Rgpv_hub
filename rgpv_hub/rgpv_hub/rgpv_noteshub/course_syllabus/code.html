@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>RGPV Resource Hub - Syllabus Finder</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#eceef0",
+                        "secondary": "#515f74",
+                        "outline": "#767683",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-variant": "#e0e3e5",
+                        "on-surface-variant": "#454652",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#b9c7df",
+                        "primary-container": "#1a237e",
+                        "outline-variant": "#c6c5d4",
+                        "on-secondary-fixed-variant": "#3a485b",
+                        "surface": "#f7f9fb",
+                        "secondary-fixed": "#d5e3fc",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#e0e0ff",
+                        "on-tertiary-fixed": "#410003",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#d8dadc",
+                        "secondary-container": "#d5e3fc",
+                        "inverse-primary": "#bdc2ff",
+                        "on-tertiary-container": "#ff635b",
+                        "surface-container-high": "#e6e8ea",
+                        "on-tertiary-fixed-variant": "#930010",
+                        "inverse-surface": "#2d3133",
+                        "background": "#f7f9fb",
+                        "on-surface": "#191c1e",
+                        "surface-tint": "#4c56af",
+                        "tertiary-container": "#670008",
+                        "tertiary-fixed": "#ffdad6",
+                        "on-secondary-container": "#57657a",
+                        "primary": "#000666",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#8690ee",
+                        "tertiary": "#400003",
+                        "primary-fixed-dim": "#bdc2ff",
+                        "on-primary-fixed": "#000767",
+                        "on-background": "#191c1e",
+                        "on-secondary-fixed": "#0d1c2e",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb3ac",
+                        "on-primary-fixed-variant": "#343d96",
+                        "surface-container-low": "#f2f4f6",
+                        "surface-bright": "#f7f9fb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "container-max": "1440px",
+                        "unit": "4px",
+                        "sidebar-width": "280px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "xl": "40px",
+                        "gutter": "24px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "button": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "h2": ["Inter"],
+                        "h1": ["Inter"],
+                        "body-md": ["Inter"],
+                        "h3": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "button": ["16px", { "lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "h2": ["32px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "h1": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400" }],
+                        "h3": ["24px", { "lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background min-h-screen">
+    <!-- TopAppBar -->
+    <header
+        class="bg-white dark:bg-slate-950 docked full-width top-0 z-50 border-b border-slate-200 dark:border-slate-800 shadow-sm dark:shadow-none fixed">
+        <div class="flex justify-between items-center w-full px-4 h-16 max-w-full">
+            <div class="flex items-center gap-4">
+                <button class="text-indigo-900 dark:text-indigo-400 active:opacity-70 scale-95 transition-all">
+                    <span class="material-symbols-outlined" data-icon="menu">menu</span>
+                </button>
+                <span class="text-lg font-bold text-indigo-900 dark:text-indigo-200 tracking-tight">RGPV Resource
+                    Hub</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+                <nav class="flex gap-6">
+                    <a class="font-inter text-sm font-medium tracking-tight text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors px-2 py-1"
+                        href="#">Dashboard</a>
+                    <a class="font-inter text-sm font-medium tracking-tight text-indigo-900 dark:text-indigo-300 font-bold px-2 py-1"
+                        href="#">Syllabus</a>
+                    <a class="font-inter text-sm font-medium tracking-tight text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors px-2 py-1"
+                        href="#">Resources</a>
+                </nav>
+                <div class="h-8 w-[1px] bg-slate-200 dark:bg-slate-800"></div>
+                <span class="font-inter text-sm font-medium tracking-tight text-indigo-900 dark:text-indigo-400">10:30
+                    AM</span>
+            </div>
+        </div>
+    </header>
+    <div class="flex pt-16">
+        <!-- NavigationDrawer -->
+        <aside
+            class="fixed inset-y-0 left-0 w-[280px] z-[60] bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 shadow-xl dark:shadow-none hidden lg:block">
+            <div class="flex flex-col h-full py-6">
+                <div class="px-6 mb-8">
+                    <h2 class="text-xl font-black text-indigo-900 dark:text-indigo-200 uppercase tracking-widest">
+                        Academic Portal</h2>
+                </div>
+                <nav class="flex-1 space-y-1">
+                    <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-200 ease-in-out"
+                        href="../semester_notes/code.html">
+                        <span class="material-symbols-outlined">description</span>
+                        <span class="font-inter text-[13px] font-medium">Notes (1st-8th Sem)</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-200 ease-in-out"
+                        href="../past_papers/code.html">
+                        <span class="material-symbols-outlined">history_edu</span>
+                        <span class="font-inter text-[13px] font-medium">Previous Year Papers</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-4 py-3 bg-slate-100 dark:bg-slate-800 text-indigo-900 dark:text-indigo-200 border-l-4 border-indigo-900 transition-all duration-200 ease-in-out"
+                        href="../course_syllabus/code.html">
+                        <span class="material-symbols-outlined">menu_book</span>
+                        <span class="font-inter text-[13px] font-medium">Syllabus</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-200 ease-in-out"
+                        href="../learnloop_dashboard_rewa/code.html">
+                        <span class="material-symbols-outlined">dashboard</span>
+                        <span class="font-inter text-[13px] font-medium">Dashboard</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-200 ease-in-out"
+                        href="../rgpv_hub_home/code.html">
+                        <span class="material-symbols-outlined">link</span>
+                        <span class="font-inter text-[13px] font-medium">Important Links</span>
+                    </a>
+                </nav>
+                <div class="mt-auto px-6 pt-6 border-t border-slate-100 dark:border-slate-800">
+                    <div class="bg-indigo-50 dark:bg-slate-800 p-4 rounded-xl">
+                        <p class="text-xs font-semibold text-indigo-900 dark:text-indigo-300 mb-1">Quick Access</p>
+                        <p class="text-[11px] text-indigo-700 dark:text-indigo-400">Learn Loop Portal</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- Main Content Canvas -->
+        <main class="flex-1 lg:ml-[280px] p-md lg:p-xl">
+            <!-- Header Section with Prominent Search -->
+            <div class="max-w-7xl mx-auto mb-10">
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+                    <div>
+                        <h1 class="font-h1 text-h1 text-primary mb-2">Syllabus Finder</h1>
+                        <p class="font-body-md text-body-md text-secondary max-w-xl">Find and download the official RGPV
+                            curriculum for all Bachelor of Technology branches and semesters.</p>
+                    </div>
+                    <div
+                        class="bg-surface-container-lowest flex items-center gap-3 px-4 py-3 rounded-xl border border-outline-variant w-full md:w-[400px] focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all shadow-sm">
+                        <span class="material-symbols-outlined text-outline">search</span>
+                        <input class="bg-transparent border-none focus:ring-0 w-full font-body-md text-on-surface"
+                            placeholder="Search branch or subject..." type="text" />
+                    </div>
+                </div>
+                <!-- Featured Section / Bento Grid Intro -->
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-12">
+                    <div
+                        class="md:col-span-8 relative h-[300px] rounded-xl overflow-hidden group shadow-md border border-outline-variant">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10">
+                        </div>
+                        <img alt="University Library"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            data-alt="Modern university library with large glass windows and students studying at long oak tables with laptops and books"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9O0N35cKxipwCEoB4uREPM5ALhjwvSLj1oT-UX4KoYRmzJBnn7eV6PKWXSfBwHkonZL05101gRNtvHGt6Hvjlw3Lj87PqsghRN_VPdApCRX_kVQGezUs4vWxImoMsgGMORnIsJRlewu5i_5XQc1kjxRknPs6t1oGALGl5yKXZ66RPhvptFs8PS_NHD15aLxBBsdWR9-6Tb4l3KtQvipvVKKEYX3EWaTqKC3peQg28ZX6HCOhMGhVvS4NukP6R8n01sZDXPtcpZcc" />
+                        <div class="absolute bottom-0 left-0 p-8 z-20">
+                            <span
+                                class="bg-primary-container text-white px-3 py-1 rounded-full text-xs font-bold mb-4 inline-block">Latest
+                                Update: 2026-27 Session</span>
+                            <h2 class="text-white font-h2 text-h2 mb-2">New CBGS Scheme Syllabus</h2>
+                            <p class="text-white/80 font-body-md text-body-md">Download updated curriculum documents for
+                                all engineering programs under RGPV University.</p>
+                        </div>
+                    </div>
+                    <div class="md:col-span-4 flex flex-col gap-6">
+                        <div
+                            class="bg-primary h-full rounded-xl p-6 flex flex-col justify-between text-white shadow-md">
+                            <span class="material-symbols-outlined text-4xl opacity-50">cloud_download</span>
+                            <div>
+                                <h3 class="font-h3 text-h3 leading-tight mb-2">Bulk Download Available</h3>
+                                <p class="font-label-sm text-label-sm opacity-80">Get all semester syllabi in a single
+                                    zip archive for offline reference.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Branch Selection Sections -->
+                <div class="space-y-12">
+                    <!-- Computer Science -->
+                    <section>
+                        <div class="flex items-center gap-4 mb-6 border-l-4 border-primary pl-4">
+                            <h2 class="font-h2 text-h2 text-primary">Computer Science &amp; Engineering</h2>
+                            <span
+                                class="font-label-sm text-label-sm bg-surface-container px-3 py-1 rounded-full text-secondary">BE
+                                / B.Tech</span>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+                            <!-- Semester Card Loop -->
+                            <div
+                                class="bg-white rounded-xl border border-outline-variant hover:shadow-lg transition-shadow duration-300 flex flex-col group overflow-hidden">
+                                <div class="p-6">
+                                    <div class="flex justify-between items-start mb-4">
+                                        <h3 class="font-h3 text-h3 text-primary">Semester I &amp; II</h3>
+                                        <span
+                                            class="bg-indigo-50 text-indigo-700 font-bold px-2 py-1 rounded text-[10px] uppercase">Common</span>
+                                    </div>
+                                    <ul class="space-y-2 mb-6">
+                                        <li
+                                            class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+                                            <span class="material-symbols-outlined text-[16px]">check_circle</span>
+                                            Engineering Physics
+                                        </li>
+                                        <li
+                                            class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+                                            <span class="material-symbols-outlined text-[16px]">check_circle</span>
+                                            Mathematics-I
+                                        </li>
+                                        <li
+                                            class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+                                            <span class="material-symbols-outlined text-[16px]">check_circle</span>
+                                            Basic Civil Engineering
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div
+                                    class="mt-auto border-t border-slate-100 p-4 bg-slate-50 group-hover:bg-indigo-50 transition-colors flex items-center justify-between">
+                                    <span class="text-[11px] text-outline italic">Updated APR 2026</span>
+                                    <button
+                                        class="flex items-center gap-2 text-primary font-button text-label-sm hover:underline">
+                                        Download PDF <span class="material-symbols-outlined text-[18px]">download</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-white rounded-xl border border-outline-variant hover:shadow-lg transition-shadow duration-300 flex flex-col group overflow-hidden">
+                                <div class="p-6">
+                                    <h3 class="font-h3 text-h3 text-primary mb-4">Semester III</h3>
+                                    <ul class="space-y-2 mb-6">
+                                        <li
+                                            class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+                                            <span class="material-symbols-outlined text-[16px]">check_circle</span> Data
+                                            Structures
+                                        </li>
+                                        <li
+                                            class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+                                            <span class="material-symbols-outlined text-[16px]">check_circle</span>
+                                            Digital Circuit &amp; System
+                                        </li>
+                                        <li
+                                            class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+                                            <span class="material-symbols-outlined text-[16px]">check_circle</span>
+                                            Discrete Structure
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div
+                                    class="mt-auto border-t border-slate-100 p-4 bg-slate-50 group-hover:bg-indigo-50 transition-colors flex items-center justify-between">
+                                    <span class="text-[11px] text-outline italic">Updated APR 2026</span>
+                                    <button
+                                        class="flex items-center gap-2 text-primary font-button text-label-sm hover:underline">
+                                        Download PDF <span class="material-symbols-outlined text-[18px]">download</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-white rounded-xl border border-outline-variant hover:shadow-lg transition-shadow duration-300 flex flex-col group overflow-hidden">
+                                <div class="p-6">
+                                    <h3 class="font-h3 text-h3 text-primary mb-4">Semester IV</h3>
+                                    <ul class="space-y-2 mb-6">
+                                        <li
+                                            class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+                                            <span class="material-symbols-outlined text-[16px]">check_circle</span>
+                                            Operating Systems
+                                        </li>
+                                        <li
+                                            class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+                                            <span class="material-symbols-outlined text-[16px]">check_circle</span>
+                                            Analysis Design Alg.
+                                        </li>
+                                        <li
+                                            class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+                                            <span class="material-symbols-outlined text-[16px]">check_circle</span>
+                                            Software Engineering
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div
+                                    class="mt-auto border-t border-slate-100 p-4 bg-slate-50 group-hover:bg-indigo-50 transition-colors flex items-center justify-between">
+                                    <span class="text-[11px] text-outline italic">Updated April 2026</span>
+                                    <button
+                                        class="flex items-center gap-2 text-primary font-button text-label-sm hover:underline">
+                                        Download PDF <span class="material-symbols-outlined text-[18px]">download</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-white rounded-xl border border-outline-variant hover:shadow-lg transition-shadow duration-300 flex flex-col group overflow-hidden">
+                                <div class="p-6">
+                                    <h3 class="font-h3 text-h3 text-primary mb-4">Semester V-VIII</h3>
+                                    <div class="bg-slate-50 p-3 rounded-lg mb-4">
+                                        <p class="text-[12px] text-secondary">Elective focus includes AI, Cyber
+                                            Security, and Cloud Computing tracks.</p>
+                                    </div>
+                                    <ul class="space-y-2 mb-6">
+                                        <li
+                                            class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+                                            <span class="material-symbols-outlined text-[16px]">description</span>
+                                            Elective List
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div
+                                    class="mt-auto border-t border-slate-100 p-4 bg-slate-50 group-hover:bg-indigo-50 transition-colors flex items-center justify-between">
+                                    <span class="text-[11px] text-outline italic">Final Year Bundle</span>
+                                    <button
+                                        class="flex items-center gap-2 text-primary font-button text-label-sm hover:underline">
+                                        View All <span
+                                            class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Civil Engineering -->
+                    <section>
+                        <div class="flex items-center gap-4 mb-6 border-l-4 border-indigo-400 pl-4">
+                            <h2 class="font-h2 text-h2 text-indigo-900">Civil Engineering</h2>
+                            <span
+                                class="font-label-sm text-label-sm bg-surface-container px-3 py-1 rounded-full text-secondary">B.Tech</span>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+                            <div
+                                class="bg-white rounded-xl border border-outline-variant p-6 flex flex-col relative overflow-hidden group">
+                                <span
+                                    class="material-symbols-outlined absolute -right-4 -top-4 text-8xl opacity-[0.03] group-hover:opacity-[0.08] transition-opacity">architecture</span>
+                                <h3 class="font-h3 text-h3 text-indigo-900 mb-4">Semester III</h3>
+                                <ul class="space-y-3 mb-8 flex-1">
+                                    <li
+                                        class="text-on-surface-variant font-label-sm text-label-sm border-b border-slate-50 pb-2">
+                                        Building Materials</li>
+                                    <li
+                                        class="text-on-surface-variant font-label-sm text-label-sm border-b border-slate-50 pb-2">
+                                        Surveying &amp; Leveling</li>
+                                    <li
+                                        class="text-on-surface-variant font-label-sm text-label-sm border-b border-slate-50 pb-2">
+                                        Strength of Materials</li>
+                                </ul>
+                                <button
+                                    class="w-full bg-primary text-white py-3 rounded-lg font-button text-button flex items-center justify-center gap-2 active:scale-[0.98] transition-transform">
+                                    <span class="material-symbols-outlined">picture_as_pdf</span> Download Syllabus
+                                </button>
+                            </div>
+                            <!-- Placeholder for other sems to show grid density -->
+                            <div
+                                class="bg-surface-container-low rounded-xl border border-dashed border-outline-variant p-6 flex items-center justify-center text-center">
+                                <div>
+                                    <span class="material-symbols-outlined text-4xl text-outline mb-2">more_horiz</span>
+                                    <p class="font-label-sm text-label-sm text-outline">Sem IV-VIII coming soon</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Electrical Engineering -->
+                    <section>
+                        <div class="flex items-center gap-4 mb-6 border-l-4 border-secondary pl-4">
+                            <h2 class="font-h2 text-h2 text-indigo-900">Electrical Engineering</h2>
+                        </div>
+                        <div class="bg-white rounded-xl border border-outline-variant p-10 text-center">
+                            <div class="max-w-md mx-auto">
+                                <span
+                                    class="material-symbols-outlined text-6xl text-secondary opacity-20 mb-4">electric_bolt</span>
+                                <h3 class="font-h3 text-h3 mb-4">Electrical &amp; Electronics Curriculum</h3>
+                                <p class="text-secondary font-body-md text-body-md mb-8">Access the most recent
+                                    curriculum documents for electrical engineering and its allied branches.</p>
+                                <div class="flex flex-wrap justify-center gap-4">
+                                    <button
+                                        class="px-6 py-2 border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-colors">Download
+                                        Sem III</button>
+                                    <button
+                                        class="px-6 py-2 border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-colors">Download
+                                        Sem IV</button>
+                                    <button
+                                        class="px-6 py-2 border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-colors">Full
+                                        Archive</button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <!-- Global Footer / Quick Help -->
+            <footer class="max-w-7xl mx-auto mt-20 pt-10 border-t border-outline-variant pb-10">
+                <div class="flex flex-col md:flex-row justify-between gap-10">
+                    <div class="flex-1">
+                        <h4 class="font-h3 text-h3 text-primary mb-4">Need Official Help?</h4>
+                        <p class="text-secondary font-body-md text-body-md mb-6">If you find any discrepancy in the
+                            syllabus files, please refer to the official RGPV portal or contact your department HOD.</p>
+                        <div class="flex gap-4">
+                            <a class="flex items-center gap-2 text-primary font-bold hover:underline" href="#">
+                                <span class="material-symbols-outlined">public</span> Official RGPV Portal
+                            </a>
+                            <a class="flex items-center gap-2 text-primary font-bold hover:underline" href="#">
+                                <span class="material-symbols-outlined">help_center</span> FAQ Support
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex-1 bg-surface-container-high rounded-2xl p-6">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-primary p-3 rounded-full text-white">
+                                <span class="material-symbols-outlined">lightbulb</span>
+                            </div>
+                            <div>
+                                <h5 class="font-label-sm text-label-sm font-bold text-primary mb-1">Study Tip</h5>
+                                <p class="text-on-surface-variant text-[13px] leading-relaxed">Combine the syllabus with
+                                    our "Important Questions" section to optimize your exam preparation for the 2026-27
+                                    session.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-16 text-center text-outline font-label-sm text-label-sm">
+                    © 2026 RGPV Resource Hub. Designed for Academic Excellence.
+                </div>
+            </footer>
+        </main>
+    </div>
+    <!-- Mobile Navigation Toggle (Logic not included but element for UI completeness) -->
+    <button
+        class="fixed bottom-6 right-6 lg:hidden bg-primary text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center z-50 active:scale-95 transition-transform">
+        <span class="material-symbols-outlined">search</span>
+    </button>
+    <script>
+        const mobileMenuBtn = document.querySelector('.material-symbols-outlined[data-icon="menu"]') || document.querySelector('header button .material-symbols-outlined');
+        const sidebar = document.querySelector('aside');
+
+        if (mobileMenuBtn && sidebar) {
+            mobileMenuBtn.parentElement.addEventListener('click', () => {
+                sidebar.classList.toggle('-translate-x-full');
+                sidebar.classList.toggle('hidden');
+            });
+        }
+
+        const searchInput = document.querySelector('input[placeholder*="Search"]');
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                const term = e.target.value.toLowerCase();
+                const cards = document.querySelectorAll('.grid > div, section > div > div, .space-y-4 > div');
+
+                cards.forEach(card => {
+                    const text = card.innerText.toLowerCase();
+                    card.style.display = text.includes(term) ? '' : 'none';
+                });
+            });
+        }
+
+        document.addEventListener('click', (e) => {
+            const target = e.target.closest('button, a');
+            if (!target) return;
+
+            const text = target.innerText.toLowerCase();
+
+            if (text.includes('download')) {
+                const fileName = target.closest('div')?.querySelector('h3, h4')?.innerText || "Document";
+                showNotification(`Downloading ${fileName}...`, 'success');
+            }
+
+            if (text.includes('view') || text.includes('full notes')) {
+                const subject = target.closest('div')?.querySelector('h3')?.innerText || "Subject";
+                showNotification(`Opening ${subject} viewer...`, 'info');
+            }
+
+            if (target.innerText.match(/SEM \d+/i) || target.innerText.match(/\d+/)) {
+                const semNum = target.innerText.replace(/\D/g, "");
+                if (semNum && semNum.length <= 2) {
+                    showNotification(`Loading resources for Semester ${semNum}...`, 'info');
+                }
+            }
+        });
+
+        function showNotification(message, type) {
+            const toast = document.createElement('div');
+            toast.className = `fixed bottom-20 right-5 px-6 py-3 rounded-xl shadow-2xl text-white font-bold transition-all transform translate-y-20 z-[100]`;
+            toast.style.backgroundColor = type === 'success' ? '#1A237E' : '#515f74';
+            toast.innerText = message;
+
+            document.body.appendChild(toast);
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-20');
+            }, 100);
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-20');
+                setTimeout(() => toast.remove(), 500);
+            }, 3000);
+        }
+
+        const timeElements = document.querySelectorAll('header span, .text-sm.font-medium.gap-2 span');
+        timeElements.forEach(el => {
+            if (el.innerText.includes(':')) {
+                setInterval(() => {
+                    const now = new Date();
+                    el.innerText = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                }, 1000);
+            }
+        });
+    </script>
+</body>
+
+</html>

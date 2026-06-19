@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>RGPV Academic Repository</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#ffb3ac",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#8690ee",
+                        "tertiary-fixed": "#ffdad6",
+                        "surface-tint": "#4c56af",
+                        "outline-variant": "#c6c5d4",
+                        "on-secondary-fixed-variant": "#3a485b",
+                        "surface": "#f7f9fb",
+                        "primary": "#000666",
+                        "on-tertiary-fixed": "#410003",
+                        "tertiary": "#400003",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#e6e8ea",
+                        "outline": "#767683",
+                        "primary-fixed": "#e0e0ff",
+                        "on-background": "#191c1e",
+                        "on-primary": "#ffffff",
+                        "tertiary-container": "#670008",
+                        "on-primary-fixed": "#000767",
+                        "surface-container": "#eceef0",
+                        "secondary": "#515f74",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#d5e3fc",
+                        "surface-bright": "#f7f9fb",
+                        "on-secondary-fixed": "#0d1c2e",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-surface-variant": "#454652",
+                        "inverse-surface": "#2d3133",
+                        "on-tertiary-fixed-variant": "#930010",
+                        "on-surface": "#191c1e",
+                        "on-tertiary-container": "#ff635b",
+                        "primary-fixed-dim": "#bdc2ff",
+                        "primary-container": "#1a237e",
+                        "inverse-primary": "#bdc2ff",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#b9c7df",
+                        "surface-container-low": "#f2f4f6",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-variant": "#e0e3e5",
+                        "on-secondary-container": "#57657a",
+                        "on-primary-fixed-variant": "#343d96",
+                        "surface-dim": "#d8dadc",
+                        "on-tertiary": "#ffffff",
+                        "background": "#f7f9fb",
+                        "secondary-fixed": "#d5e3fc"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "lg": "24px",
+                        "sidebar-width": "280px",
+                        "sm": "8px",
+                        "container-max": "1440px",
+                        "xl": "40px",
+                        "xs": "4px",
+                        "unit": "4px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "h1": ["Inter"],
+                        "button": ["Inter"],
+                        "h2": ["Inter"],
+                        "h3": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "h1": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "button": ["16px", { "lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "h2": ["32px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "h3": ["24px", { "lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface">
+    <!-- Sidebar Navigation -->
+
+    <a href="http://127.0.0.1:5500/academic_excellence/code.html"
+        class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+        Academic Excellence Page
+    </a>
+
+    <aside class="fixed left-0 top-0 h-screen w-72 border-r border-slate-200 bg-slate-50 dark:bg-slate-950 z-50">
+        <div class="flex flex-col h-full">
+            <div class="p-6 flex flex-col gap-2">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-primary-container rounded flex items-center justify-center">
+                        <span class="material-symbols-outlined text-white" data-icon="school">school</span>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-black tracking-tighter text-[#1A237E] dark:text-white uppercase">RGPV
+                            Portal</h1>
+                        <p class="text-[11px] font-medium text-slate-500 uppercase tracking-widest">Digital Scholarship
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <nav class="flex flex-col gap-1 p-4 flex-grow">
+                <div class="space-y-1">
+                    <div class="px-3 py-2 text-xs font-bold text-slate-400 uppercase tracking-widest">Navigation</div>
+
+                    <a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 transition-all rounded-lg group"
+                        href="../learnloop_dashboard_rewa/code.html">
+                        <span class="material-symbols-outlined group-hover:text-[#1A237E]"
+                            data-icon="dashboard">dashboard</span>
+                        <span class="font-label-sm text-label-sm">Academic Dashboard</span>
+                    </a>
+
+                    <a class="flex items-center gap-3 px-3 py-2.5 bg-white dark:bg-slate-900 border-l-4 border-[#1A237E] text-[#1A237E] dark:text-white font-semibold shadow-sm transition-all rounded-r-lg"
+                        href="../semester_notes/code.html">
+                        <span class="material-symbols-outlined" data-icon="library_books">library_books</span>
+                        <span class="font-label-sm text-label-sm">Notes Library</span>
+                    </a>
+
+                    <a class="flex items-center justify-between px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 transition-all rounded-lg group"
+                        href="../past_papers/code.html">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined group-hover:text-[#1A237E]"
+                                data-icon="history_edu">history_edu</span>
+                            <span class="font-label-sm text-label-sm">Previous Papers</span>
+                        </div>
+                        <span
+                            class="bg-primary-container text-white text-[10px] font-bold px-1.5 py-0.5 rounded">NEW</span>
+                    </a>
+
+                    <a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 transition-all rounded-lg group"
+                        href="../course_syllabus/code.html">
+                        <span class="material-symbols-outlined group-hover:text-[#1A237E]"
+                            data-icon="menu_book">menu_book</span>
+                        <span class="font-label-sm text-label-sm">Official Syllabus</span>
+                    </a>
+
+                    <a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 transition-all rounded-lg group"
+                        href="../rgpv_hub_home/code.html">
+                        <span class="material-symbols-outlined group-hover:text-[#1A237E]" data-icon="home">home</span>
+                        <span class="font-label-sm text-label-sm">Portal Home</span>
+                    </a>
+                </div>
+            </nav>
+            <div class="mt-8 space-y-1">
+                <div class="px-3 py-2 text-xs font-bold text-slate-400 uppercase tracking-widest">Semesters</div>
+                <div class="grid grid-cols-1 gap-1">
+                    <button
+                        class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:text-[#1A237E] hover:bg-slate-100 rounded-lg transition-all text-left">
+                        <span class="text-[11px] font-bold w-5">01</span>
+                        <span class="font-label-sm text-label-sm">Semester 1</span>
+                    </button>
+                    <button
+                        class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:text-[#1A237E] hover:bg-slate-100 rounded-lg transition-all text-left">
+                        <span class="text-[11px] font-bold w-5">02</span>
+                        <span class="font-label-sm text-label-sm">Semester 2</span>
+                    </button>
+                    <button
+                        class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:text-[#1A237E] hover:bg-slate-100 rounded-lg transition-all text-left">
+                        <span class="text-[11px] font-bold w-5">03</span>
+                        <span class="font-label-sm text-label-sm">Semester 3</span>
+                    </button>
+                </div>
+            </div>
+            </nav>
+            <div class="p-6 border-t border-slate-200 mt-auto">
+                <div class="flex items-center gap-3">
+                    <img class="w-8 h-8 object-contain opacity-50 grayscale"
+                        data-alt="Close-up of university crest or official emblem on a document for institutional branding"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRNDkZSYcY4EEX_gQ3Az0K2uU56ZgmU82SjBRZo7aIDltvW3P4iRH24JnEJ8rnlk7CXV1ZKxjCGcUO_8L9hj9CCMvVp_ZOtVvwYN3FG2XziMM7Spd2e1Zx9dBmULaDXl_K4745hj9S08iT85neq2hR72kA4f0CDiojcm5rXqw-MMHtvrFlg2ncsRHOT5PViwBBh_1CcMhpBiv8w-WGaN29X1OsWnJR0uMGpb7pZn4Ml8u4cz1XRoY3EnpJNL84shKRmvexyk1NdhA" />
+                    <span class="text-[10px] font-bold text-slate-400 uppercase">v2.0.4 rgpv-core</span>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <!-- Main Content Area -->
+    <main class="ml-72 min-h-screen flex flex-col">
+        <!-- Top Bar -->
+        <header
+            class="sticky top-0 h-16 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 z-40 px-xl flex items-center justify-between">
+            <div class="flex items-center gap-6 w-1/2">
+                <div class="relative w-full max-w-lg">
+                    <span
+                        class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-[20px]"
+                        data-icon="search">search</span>
+                    <input
+                        class="w-full pl-10 pr-4 py-2 bg-slate-100 border-none rounded text-sm focus:ring-2 focus:ring-[#1A237E] transition-all"
+                        placeholder="Search subjects, codes, or topics..." type="text" />
+                </div>
+            </div>
+            <div class="flex items-center gap-6">
+                <div class="flex flex-col items-end">
+                    <!--<span class="text-sm font-bold text-[#1A237E] dark:text-white" id="digital-clock">10:42:00 AM</span>
+                    <span class="text-[10px] text-slate-500 uppercase tracking-tight">System Status: Active</span>-->
+                </div>
+                <div class="h-6 w-[1px] bg-slate-200"></div>
+                <div class="flex items-center gap-4">
+                    <button class="relative p-2 text-slate-500 hover:bg-slate-50 rounded-full transition-colors">
+                        <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+                        <span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+                    </button>
+                    <div class="flex items-center gap-3">
+                        <div class="flex flex-col items-end">
+                            <span class="text-xs font-bold text-slate-700">Sanya Chaturvedi</span>
+                            <span class="text-[10px] text-slate-500">CS-B 3rd Year</span>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="p-xl space-y-xl max-w-7xl mx-auto w-full">
+            <!-- Header Section -->
+            <section class="flex items-center justify-between">
+                <div>
+                    <h2 class="font-h2 text-h2 text-[#1A237E]">Semester Repository</h2>
+                    <p class="font-body-md text-body-md text-slate-500 mt-1">Select your current semester to access
+                        notes and files.</p>
+                </div>
+                <button
+                    class="bg-[#1A237E] text-white px-6 py-2.5 rounded flex items-center gap-2 font-button text-button hover:bg-primary transition-all shadow-sm active:scale-95">
+                    <span class="material-symbols-outlined" data-icon="upload">upload</span>
+                    Upload Notes
+                </button>
+            </section>
+            <!-- Semester Selectors (Bento/Grid style) -->
+            <section class="grid grid-cols-4 md:grid-cols-8 gap-4">
+                <button
+                    class="flex flex-col items-center justify-center p-4 bg-white border border-slate-200 rounded-lg hover:border-[#1A237E] hover:shadow-md transition-all group">
+                    <span class="text-[10px] font-black text-slate-300 group-hover:text-[#1A237E] mb-1">01</span>
+                    <span class="text-xs font-bold text-slate-700">SEM 1</span>
+                </button>
+                <button
+                    class="flex flex-col items-center justify-center p-4 bg-white border-2 border-[#1A237E] rounded-lg shadow-sm">
+                    <span class="text-[10px] font-black text-[#1A237E] mb-1">02</span>
+                    <span class="text-xs font-bold text-[#1A237E]">SEM 2</span>
+                </button>
+                <button
+                    class="flex flex-col items-center justify-center p-4 bg-white border border-slate-200 rounded-lg hover:border-[#1A237E] hover:shadow-md transition-all group">
+                    <span class="text-[10px] font-black text-slate-300 group-hover:text-[#1A237E] mb-1">03</span>
+                    <span class="text-xs font-bold text-slate-700">SEM 3</span>
+                </button>
+                <button
+                    class="flex flex-col items-center justify-center p-4 bg-white border border-slate-200 rounded-lg hover:border-[#1A237E] hover:shadow-md transition-all group">
+                    <span class="text-[10px] font-black text-slate-300 group-hover:text-[#1A237E] mb-1">04</span>
+                    <span class="text-xs font-bold text-slate-700">SEM 4</span>
+                </button>
+                <button
+                    class="flex flex-col items-center justify-center p-4 bg-white border border-slate-200 rounded-lg hover:border-[#1A237E] hover:shadow-md transition-all group">
+                    <span class="text-[10px] font-black text-slate-300 group-hover:text-[#1A237E] mb-1">05</span>
+                    <span class="text-xs font-bold text-slate-700">SEM 5</span>
+                </button>
+                <button
+                    class="flex flex-col items-center justify-center p-4 bg-white border border-slate-200 rounded-lg hover:border-[#1A237E] hover:shadow-md transition-all group">
+                    <span class="text-[10px] font-black text-slate-300 group-hover:text-[#1A237E] mb-1">06</span>
+                    <span class="text-xs font-bold text-slate-700">SEM 6</span>
+                </button>
+                <button
+                    class="flex flex-col items-center justify-center p-4 bg-white border border-slate-200 rounded-lg hover:border-[#1A237E] hover:shadow-md transition-all group">
+                    <span class="text-[10px] font-black text-slate-300 group-hover:text-[#1A237E] mb-1">07</span>
+                    <span class="text-xs font-bold text-slate-700">SEM 7</span>
+                </button>
+                <button
+                    class="flex flex-col items-center justify-center p-4 bg-white border border-slate-200 rounded-lg hover:border-[#1A237E] hover:shadow-md transition-all group">
+                    <span class="text-[10px] font-black text-slate-300 group-hover:text-[#1A237E] mb-1">08</span>
+                    <span class="text-xs font-bold text-slate-700">SEM 8</span>
+                </button>
+            </section>
+            <!-- Subject Specific Cards -->
+            <section class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+                <!-- Card 1 -->
+                <div
+                    class="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-xl transition-shadow flex flex-col">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <span
+                                class="px-2 py-1 bg-slate-100 text-[#1A237E] text-[10px] font-black rounded uppercase tracking-tighter">BT-101</span>
+                            <span
+                                class="bg-green-100 text-green-700 px-2 py-0.5 rounded-full text-[10px] font-bold">UPDATED</span>
+                        </div>
+                        <h3 class="font-h3 text-h3 text-slate-900 mb-2">Engineering Chemistry</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed mb-6">Fundamental principles of chemical
+                            science in engineering applications, thermodynamics, and kinetics.</p>
+                        <div class="flex items-center gap-2 mb-4">
+                            <span
+                                class="px-2 py-0.5 bg-slate-50 text-slate-600 rounded text-[10px] font-bold">Science</span>
+                            <span class="px-2 py-0.5 bg-slate-50 text-slate-600 rounded text-[10px] font-bold">Core
+                                Subject</span>
+                        </div>
+                    </div>
+                    <div class="mt-auto border-t border-slate-50 p-4 bg-slate-50/30 flex gap-2">
+                        <button
+                            class="flex-1 bg-[#1A237E] text-white py-2 rounded text-xs font-bold flex items-center justify-center gap-1.5 hover:bg-primary">
+                            <span class="material-symbols-outlined text-[18px]"
+                                data-icon="description">description</span>
+                            Full Notes
+                        </button>
+                        <button
+                            class="flex-1 bg-white border border-slate-200 text-slate-700 py-2 rounded text-xs font-bold flex items-center justify-center gap-1.5 hover:bg-slate-50">
+                            <span class="material-symbols-outlined text-[18px]"
+                                data-icon="history_edu">history_edu</span>
+                            Papers
+                        </button>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div
+                    class="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-xl transition-shadow flex flex-col">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <span
+                                class="px-2 py-1 bg-slate-100 text-[#1A237E] text-[10px] font-black rounded uppercase tracking-tighter">BT-102</span>
+                            <span
+                                class="bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded-full text-[10px] font-bold">POPULAR</span>
+                        </div>
+                        <h3 class="font-h3 text-h3 text-slate-900 mb-2">Mathematics-I</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed mb-6">Advanced calculus, linear algebra, and
+                            differential equations tailored for engineering students.</p>
+                        <div class="flex items-center gap-2 mb-4">
+                            <span
+                                class="px-2 py-0.5 bg-slate-50 text-slate-600 rounded text-[10px] font-bold">Calculus</span>
+                            <span class="px-2 py-0.5 bg-slate-50 text-slate-600 rounded text-[10px] font-bold">Credits:
+                                4</span>
+                        </div>
+                    </div>
+                    <div class="mt-auto border-t border-slate-50 p-4 bg-slate-50/30 flex gap-2">
+                        <button
+                            class="flex-1 bg-[#1A237E] text-white py-2 rounded text-xs font-bold flex items-center justify-center gap-1.5 hover:bg-primary">
+                            <span class="material-symbols-outlined text-[18px]"
+                                data-icon="description">description</span>
+                            Full Notes
+                        </button>
+                        <button
+                            class="flex-1 bg-white border border-slate-200 text-slate-700 py-2 rounded text-xs font-bold flex items-center justify-center gap-1.5 hover:bg-slate-50">
+                            <span class="material-symbols-outlined text-[18px]"
+                                data-icon="history_edu">history_edu</span>
+                            Papers
+                        </button>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div
+                    class="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-xl transition-shadow flex flex-col">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <span
+                                class="px-2 py-1 bg-slate-100 text-[#1A237E] text-[10px] font-black rounded uppercase tracking-tighter">BT-103</span>
+                        </div>
+                        <h3 class="font-h3 text-h3 text-slate-900 mb-2">English for Communication</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed mb-6">Professional communication skills,
+                            technical writing, and soft skill development for global careers.</p>
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="px-2 py-0.5 bg-slate-50 text-slate-600 rounded text-[10px] font-bold">Soft
+                                Skills</span>
+                            <span class="px-2 py-0.5 bg-slate-50 text-slate-600 rounded text-[10px] font-bold">Viva
+                                Prep</span>
+                        </div>
+                    </div>
+                    <div class="mt-auto border-t border-slate-50 p-4 bg-slate-50/30 flex gap-2">
+                        <button
+                            class="flex-1 bg-[#1A237E] text-white py-2 rounded text-xs font-bold flex items-center justify-center gap-1.5 hover:bg-primary">
+                            <span class="material-symbols-outlined text-[18px]"
+                                data-icon="description">description</span>
+                            Full Notes
+                        </button>
+                        <button
+                            class="flex-1 bg-white border border-slate-200 text-slate-700 py-2 rounded text-xs font-bold flex items-center justify-center gap-1.5 hover:bg-slate-50">
+                            <span class="material-symbols-outlined text-[18px]"
+                                data-icon="history_edu">history_edu</span>
+                            Papers
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <!-- Bottom Sections -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-lg pt-8 border-t border-slate-200">
+                <!-- Recent Papers -->
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <h4 class="text-sm font-black text-slate-900 uppercase tracking-wider">Recent Previous Year
+                            Papers</h4>
+                        <a class="text-xs font-bold text-[#1A237E] hover:underline" href="#">View All</a>
+                    </div>
+                    <div class="bg-white border border-slate-200 rounded-lg divide-y divide-slate-100">
+                        <div class="p-3 flex items-center justify-between hover:bg-slate-50 transition-colors">
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-slate-400"
+                                    data-icon="picture_as_pdf">picture_as_pdf</span>
+                                <span class="text-xs font-medium text-slate-700">June 2026 - Engineering
+                                    Chemistry</span>
+                            </div>
+                            <span class="text-[10px] text-slate-400">PDF • 1.2 MB</span>
+                        </div>
+                        <div class="p-3 flex items-center justify-between hover:bg-slate-50 transition-colors">
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-slate-400"
+                                    data-icon="picture_as_pdf">picture_as_pdf</span>
+                                <span class="text-xs font-medium text-slate-700">Dec 2026 - Mathematics-I</span>
+                            </div>
+                            <span class="text-[10px] text-slate-400">PDF • 2.5 MB</span>
+                        </div>
+                        <div class="p-3 flex items-center justify-between hover:bg-slate-50 transition-colors">
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-slate-400"
+                                    data-icon="picture_as_pdf">picture_as_pdf</span>
+                                <span class="text-xs font-medium text-slate-700">June 2026 - Physics-II</span>
+                            </div>
+                            <span class="text-[10px] text-slate-400">PDF • 1.8 MB</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- RGPV Direct Links -->
+                <div class="space-y-4">
+                    <h4 class="text-sm font-black text-slate-900 uppercase tracking-wider">RGPV Direct Links</h4>
+                    <div class="grid grid-cols-2 gap-3">
+                        <a class="p-4 bg-slate-50 border border-slate-200 rounded-lg flex items-center gap-3 group hover:border-[#1A237E] transition-all"
+                            href="#">
+                            <div
+                                class="w-8 h-8 rounded bg-white flex items-center justify-center text-[#1A237E] shadow-sm">
+                                <span class="material-symbols-outlined" data-icon="open_in_new">open_in_new</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-xs font-bold text-slate-700 group-hover:text-[#1A237E]">Result
+                                    Portal</span>
+                                <span class="text-[10px] text-slate-500">Official RGPV</span>
+                            </div>
+                        </a>
+                        <a class="p-4 bg-slate-50 border border-slate-200 rounded-lg flex items-center gap-3 group hover:border-[#1A237E] transition-all"
+                            href="#">
+                            <div
+                                class="w-8 h-8 rounded bg-white flex items-center justify-center text-[#1A237E] shadow-sm">
+                                <span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-xs font-bold text-slate-700 group-hover:text-[#1A237E]">Time
+                                    Table</span>
+                                <span class="text-[10px] text-slate-500">Exam Schedule</span>
+                            </div>
+                        </a>
+                        <a class="p-4 bg-slate-50 border border-slate-200 rounded-lg flex items-center gap-3 group hover:border-[#1A237E] transition-all"
+                            href="#">
+                            <div
+                                class="w-8 h-8 rounded bg-white flex items-center justify-center text-[#1A237E] shadow-sm">
+                                <span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span
+                                    class="text-xs font-bold text-slate-700 group-hover:text-[#1A237E]">Enrollment</span>
+                                <span class="text-[10px] text-slate-500">Student Login</span>
+                            </div>
+                        </a>
+                        <a class="p-4 bg-slate-50 border border-slate-200 rounded-lg flex items-center gap-3 group hover:border-[#1A237E] transition-all"
+                            href="#">
+                            <div
+                                class="w-8 h-8 rounded bg-white flex items-center justify-center text-[#1A237E] shadow-sm">
+                                <span class="material-symbols-outlined" data-icon="campaign">campaign</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-xs font-bold text-slate-700 group-hover:text-[#1A237E]">Notices</span>
+                                <span class="text-[10px] text-slate-500">Official News</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer class="mt-auto w-full border-t border-slate-200 bg-white dark:bg-slate-900">
+            <div class="flex justify-between items-center px-xl py-8 max-w-7xl mx-auto">
+                <div class="space-y-1">
+                    <p class="font-inter text-xs text-slate-500">© 2026 RGPV Academic Portal. All Rights Reserved.</p>
+                    <p class="font-inter text-[10px] text-slate-400">Maintained by the University Digital Library
+                        Department.</p>
+                </div>
+                <div class="flex items-center gap-8">
+                    <a class="font-inter text-xs text-slate-500 hover:text-[#1A237E] transition-all font-semibold"
+                        href="#">Quick Links</a>
+                    <a class="font-inter text-xs text-slate-500 hover:text-[#1A237E] transition-all font-semibold"
+                        href="#">Syllabus</a>
+                    <a class="font-inter text-xs text-slate-500 hover:text-[#1A237E] transition-all font-semibold"
+                        href="#">Contact Support</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <!-- Floating Action Button (Optional contextual) -->
+    <button
+        class="fixed bottom-8 right-8 w-14 h-14 bg-[#1A237E] text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform active:scale-95 z-50">
+        <span class="material-symbols-outlined" data-icon="chat">chat</span>
+    </button>
+    <script>
+        const mobileMenuBtn = document.querySelector('.material-symbols-outlined[data-icon="menu"]') || document.querySelector('header button .material-symbols-outlined');
+        const sidebar = document.querySelector('aside');
+
+        if (mobileMenuBtn && sidebar) {
+            mobileMenuBtn.parentElement.addEventListener('click', () => {
+                sidebar.classList.toggle('-translate-x-full');
+                sidebar.classList.toggle('hidden');
+            });
+        }
+
+        const searchInput = document.querySelector('input[placeholder*="Search"]');
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                const term = e.target.value.toLowerCase();
+                const cards = document.querySelectorAll('.grid > div, section > div > div, .space-y-4 > div');
+
+                cards.forEach(card => {
+                    const text = card.innerText.toLowerCase();
+                    card.style.display = text.includes(term) ? '' : 'none';
+                });
+            });
+        }
+
+        document.addEventListener('click', (e) => {
+            const target = e.target.closest('button, a');
+            if (!target) return;
+
+            const text = target.innerText.toLowerCase();
+
+            if (text.includes('download')) {
+                const fileName = target.closest('div')?.querySelector('h3, h4')?.innerText || "Document";
+                showNotification(`Downloading ${fileName}...`, 'success');
+            }
+
+            if (text.includes('view') || text.includes('full notes')) {
+                const subject = target.closest('div')?.querySelector('h3')?.innerText || "Subject";
+                showNotification(`Opening ${subject} viewer...`, 'info');
+            }
+
+            if (target.innerText.match(/SEM \d+/i) || target.innerText.match(/\d+/)) {
+                const semNum = target.innerText.replace(/\D/g, "");
+                if (semNum && semNum.length <= 2) {
+                    showNotification(`Loading resources for Semester ${semNum}...`, 'info');
+                }
+            }
+        });
+
+        function showNotification(message, type) {
+            const toast = document.createElement('div');
+            toast.className = `fixed bottom-20 right-5 px-6 py-3 rounded-xl shadow-2xl text-white font-bold transition-all transform translate-y-20 z-[100]`;
+            toast.style.backgroundColor = type === 'success' ? '#1A237E' : '#515f74';
+            toast.innerText = message;
+
+            document.body.appendChild(toast);
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-20');
+            }, 100);
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-20');
+                setTimeout(() => toast.remove(), 500);
+            }, 3000);
+        }
+
+        const timeElements = document.querySelectorAll('header span, .text-sm.font-medium.gap-2 span');
+        timeElements.forEach(el => {
+            if (el.innerText.includes(':')) {
+                setInterval(() => {
+                    const now = new Date();
+                    el.innerText = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                }, 1000);
+            }
+        });
+    </script>
+</body>
+
+</html>

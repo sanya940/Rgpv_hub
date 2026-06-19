@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Previous Year Papers - RGPV Resource Hub</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#eceef0",
+                        "secondary": "#515f74",
+                        "outline": "#767683",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-variant": "#e0e3e5",
+                        "on-surface-variant": "#454652",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#b9c7df",
+                        "primary-container": "#1a237e",
+                        "outline-variant": "#c6c5d4",
+                        "on-secondary-fixed-variant": "#3a485b",
+                        "surface": "#f7f9fb",
+                        "secondary-fixed": "#d5e3fc",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#e0e0ff",
+                        "on-tertiary-fixed": "#410003",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#d8dadc",
+                        "secondary-container": "#d5e3fc",
+                        "inverse-primary": "#bdc2ff",
+                        "on-tertiary-container": "#ff635b",
+                        "surface-container-high": "#e6e8ea",
+                        "on-tertiary-fixed-variant": "#930010",
+                        "inverse-surface": "#2d3133",
+                        "background": "#f7f9fb",
+                        "on-surface": "#191c1e",
+                        "surface-tint": "#4c56af",
+                        "tertiary-container": "#670008",
+                        "tertiary-fixed": "#ffdad6",
+                        "on-secondary-container": "#57657a",
+                        "primary": "#000666",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#8690ee",
+                        "tertiary": "#400003",
+                        "primary-fixed-dim": "#bdc2ff",
+                        "on-primary-fixed": "#000767",
+                        "on-background": "#191c1e",
+                        "on-secondary-fixed": "#0d1c2e",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb3ac",
+                        "on-primary-fixed-variant": "#343d96",
+                        "surface-container-low": "#f2f4f6",
+                        "surface-bright": "#f7f9fb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "container-max": "1440px",
+                        "unit": "4px",
+                        "sidebar-width": "280px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "xl": "40px",
+                        "gutter": "24px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "button": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "h2": ["Inter"],
+                        "h1": ["Inter"],
+                        "body-md": ["Inter"],
+                        "h3": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "button": ["16px", { "lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "h2": ["32px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "h1": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400" }],
+                        "h3": ["24px", { "lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+    <!-- TopAppBar -->
+    <header
+        class="bg-white dark:bg-slate-950 text-indigo-900 dark:text-indigo-400 font-inter text-sm font-medium tracking-tight docked full-width top-0 z-50 border-b border-slate-200 dark:border-slate-800 shadow-sm dark:shadow-none flex justify-between items-center w-full px-4 h-16 max-w-full sticky">
+        <div class="flex items-center gap-4">
+            <button
+                class="material-symbols-outlined hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors p-2 rounded-full active:opacity-70 scale-95 transition-all"
+                data-icon="menu">menu</button>
+            <h1 class="text-lg font-bold text-indigo-900 dark:text-indigo-200 tracking-tight">RGPV Resource Hub</h1>
+        </div>
+        <div class="flex items-center gap-6">
+            <nav class="hidden md:flex gap-6 items-center">
+                <a class="text-slate-600 dark:text-slate-400 hover:text-indigo-900 transition-colors"
+                    href="#">Resources</a>
+                <a class="text-indigo-900 dark:text-indigo-300 font-bold" href="#">Previous Papers</a>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-indigo-900 transition-colors"
+                    href="#">University News</a>
+            </nav>
+            <span class="text-slate-500 font-medium border-l border-slate-200 pl-6 h-6 flex items-center">10:30
+                AM</span>
+        </div>
+    </header>
+    <div class="flex flex-1 overflow-hidden">
+        <!-- NavigationDrawer -->
+        <aside
+            class="fixed inset-y-0 left-0 w-[280px] z-[60] bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 shadow-xl dark:shadow-none flex flex-col h-full py-6 transition-all duration-200 ease-in-out transform -translate-x-full lg:translate-x-0 lg:relative">
+            <div class="px-6 mb-8">
+                <h2 class="text-xl font-black text-indigo-900 dark:text-indigo-200 uppercase tracking-wider">Academic
+                    Portal</h2>
+            </div>
+            <nav class="flex-1 space-y-1">
+                <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-200 ease-in-out font-inter text-[13px] font-medium"
+                    href="../semester_notes/code.html">
+                    <span class="material-symbols-outlined" data-icon="description">description</span>
+                    Notes (1st-8th Sem)
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 bg-slate-100 dark:bg-slate-800 text-indigo-900 dark:text-indigo-200 border-l-4 border-indigo-900 transition-all duration-200 ease-in-out font-inter text-[13px] font-medium"
+                    href="../past_papers/code.html">
+                    <span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+                    Previous Year Papers
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-200 ease-in-out font-inter text-[13px] font-medium"
+                    href="../course_syllabus/code.html">
+                    <span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+                    Syllabus
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-200 ease-in-out font-inter text-[13px] font-medium"
+                    href="../learnloop_dashboard_rewa/code.html">
+                    <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                    Dashboard
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-200 ease-in-out font-inter text-[13px] font-medium"
+                    href="../rgpv_hub_home/code.html">
+                    <span class="material-symbols-outlined" data-icon="link">link</span>
+                    Important Links
+                </a>
+            </nav>
+            <div class="mt-auto px-6 pt-6 border-t border-slate-100 dark:border-slate-800">
+                <div class="flex items-center gap-3 p-3 bg-indigo-50 dark:bg-indigo-900/20 rounded-xl">
+                    <div
+                        class="w-10 h-10 rounded-full bg-indigo-900 flex items-center justify-center text-white font-bold">
+                        SC</div>
+                    <div>
+                        <p class="text-xs font-bold text-indigo-900 dark:text-indigo-200">Sanya chaturvedi</p>
+                        <p class="text-[10px] text-indigo-700 dark:text-indigo-400">CS - 6th Semester</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- Main Content -->
+        <main class="flex-1 overflow-y-auto p-4 md:p-xl bg-surface">
+            <div class="max-w-[1200px] mx-auto space-y-lg">
+                <!-- Hero Section / Context -->
+                <header class="flex flex-col md:flex-row md:items-end justify-between gap-md mb-8">
+                    <div class="space-y-xs">
+                        <h2 class="font-h1 text-h1 text-primary">Previous Year Papers</h2>
+                        <p class="font-body-md text-body-md text-secondary max-w-xl">Access a comprehensive archive of
+                            university exam papers to aid your preparation and master the exam patterns.</p>
+                    </div>
+                    <div class="flex gap-sm">
+                        <span
+                            class="inline-flex items-center gap-1 px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">
+                            <span class="material-symbols-outlined text-[14px]" data-icon="verified">verified</span>
+                            Verified Resources
+                        </span>
+                        <span
+                            class="inline-flex items-center gap-1 px-3 py-1 bg-surface-container-highest text-secondary text-xs font-bold rounded-full">
+                            <span class="material-symbols-outlined text-[14px]" data-icon="update">update</span>
+                            Updated 2h ago
+                        </span>
+                    </div>
+                </header>
+                <!-- Prominent Search & Filters -->
+                <section
+                    class="bg-white dark:bg-slate-950 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-6">
+                    <div class="relative max-w-3xl">
+                        <span
+                            class="absolute inset-y-0 left-0 pl-4 flex items-center text-secondary pointer-events-none">
+                            <span class="material-symbols-outlined" data-icon="search">search</span>
+                        </span>
+                        <input
+                            class="w-full pl-12 pr-4 py-4 bg-slate-100 dark:bg-slate-900 border-none rounded-xl font-body-md text-body-md focus:ring-2 focus:ring-primary-container transition-all"
+                            placeholder="Search by subject name or code (e.g. CS601, Computer Networks)..."
+                            type="text" />
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <div class="space-y-2">
+                            <label
+                                class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Branch</label>
+                            <select
+                                class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg p-3 font-body-md text-body-md focus:border-primary focus:ring-0">
+                                <option>Computer Science</option>
+                                <option>Mechanical Engineering</option>
+                                <option>Electronics &amp; Communication</option>
+                                <option>Civil Engineering</option>
+                                <option>Information Technology</option>
+                            </select>
+                        </div>
+                        <div class="space-y-2">
+                            <label
+                                class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Year</label>
+                            <select
+                                class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg p-3 font-body-md text-body-md focus:border-primary focus:ring-0">
+                                <option>2026</option>
+                                <option>2026</option>
+                                <option>2026</option>
+                                <option>2026</option>
+                                <option>2026</option>
+                            </select>
+                        </div>
+                        <div class="space-y-2">
+                            <label
+                                class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Semester</label>
+                            <select
+                                class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg p-3 font-body-md text-body-md focus:border-primary focus:ring-0">
+                                <option>Semester 1</option>
+                                <option>Semester 2</option>
+                                <option>Semester 3</option>
+                                <option>Semester 4</option>
+                                <option>Semester 5</option>
+                                <option>Semester 6</option>
+                                <option>Semester 7</option>
+                                <option>Semester 8</option>
+                            </select>
+                        </div>
+                        <div class="flex items-end">
+                            <button
+                                class="w-full bg-primary text-on-primary font-button text-button py-3.5 rounded-lg hover:brightness-110 active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+                                <span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+                                Apply Filters
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <!-- Papers Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+                    <!-- Paper Card 1 -->
+                    <div
+                        class="group bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300">
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between items-start">
+                                <div class="bg-indigo-50 dark:bg-indigo-900/30 p-3 rounded-lg text-primary">
+                                    <span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+                                </div>
+                                <span
+                                    class="font-label-sm text-label-sm px-2 py-1 bg-surface-container rounded uppercase">CS601</span>
+                            </div>
+                            <div class="space-y-1">
+                                <h3 class="font-h3 text-h3 text-on-surface">Computer Networks</h3>
+                                <p class="font-body-md text-body-md text-secondary"> 2026 • Main Examination</p>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-2 py-1 text-[10px] font-bold border border-slate-200 text-secondary rounded uppercase">Scheme
+                                    2026</span>
+                                <span
+                                    class="px-2 py-1 text-[10px] font-bold border border-slate-200 text-secondary rounded uppercase">6th
+                                    Sem</span>
+                            </div>
+                        </div>
+                        <div
+                            class="px-6 py-4 bg-slate-50 dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center">
+                            <span class="text-xs text-secondary italic">Last updated: Jan 15</span>
+                            <button class="flex items-center gap-2 text-primary font-bold text-sm hover:underline">
+                                <span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+                                PDF (1.2 MB)
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Paper Card 2 -->
+                    <div
+                        class="group bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300">
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between items-start">
+                                <div class="bg-indigo-50 dark:bg-indigo-900/30 p-3 rounded-lg text-primary">
+                                    <span class="material-symbols-outlined" data-icon="security">security</span>
+                                </div>
+                                <span
+                                    class="font-label-sm text-label-sm px-2 py-1 bg-surface-container rounded uppercase">CS602</span>
+                            </div>
+                            <div class="space-y-1">
+                                <h3 class="font-h3 text-h3 text-on-surface">Information Security</h3>
+                                <p class="font-body-md text-body-md text-secondary">MAIN Exam 2026</p>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-2 py-1 text-[10px] font-bold border border-slate-200 text-secondary rounded uppercase">Scheme
+                                    2026</span>
+                                <span
+                                    class="px-2 py-1 text-[10px] font-bold border border-slate-200 text-secondary rounded uppercase">6th
+                                    Sem</span>
+                            </div>
+                        </div>
+                        <div
+                            class="px-6 py-4 bg-slate-50 dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center">
+                            <span class="text-xs text-secondary italic">Last updated: APR 2026</span>
+                            <button class="flex items-center gap-2 text-primary font-bold text-sm hover:underline">
+                                <span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+                                PDF (0.8 MB)
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Paper Card 3 -->
+                    <div
+                        class="group bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300">
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between items-start">
+                                <div class="bg-indigo-50 dark:bg-indigo-900/30 p-3 rounded-lg text-primary">
+                                    <span class="material-symbols-outlined" data-icon="architecture">architecture</span>
+                                </div>
+                                <span
+                                    class="font-label-sm text-label-sm px-2 py-1 bg-surface-container rounded uppercase">CS603</span>
+                            </div>
+                            <div class="space-y-1">
+                                <h3 class="font-h3 text-h3 text-on-surface">Software Engineering</h3>
+                                <p class="font-body-md text-body-md text-secondary">2026 • Main Examination</p>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-2 py-1 text-[10px] font-bold border border-slate-200 text-secondary rounded uppercase">Scheme
+                                    2026</span>
+                                <span
+                                    class="px-2 py-1 text-[10px] font-bold border border-slate-200 text-secondary rounded uppercase">6th
+                                    Sem</span>
+                            </div>
+                        </div>
+                        <div
+                            class="px-6 py-4 bg-slate-50 dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center">
+                            <span class="text-xs text-secondary italic">Last updated: APR 2026</span>
+                            <button class="flex items-center gap-2 text-primary font-bold text-sm hover:underline">
+                                <span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+                                PDF (1.5 MB)
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Paper Card 4 -->
+                    <div
+                        class="group bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300">
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between items-start">
+                                <div class="bg-indigo-50 dark:bg-indigo-900/30 p-3 rounded-lg text-primary">
+                                    <span class="material-symbols-outlined" data-icon="memory">memory</span>
+                                </div>
+                                <span
+                                    class="font-label-sm text-label-sm px-2 py-1 bg-surface-container rounded uppercase">CS604</span>
+                            </div>
+                            <div class="space-y-1">
+                                <h3 class="font-h3 text-h3 text-on-surface">Microprocessor &amp; Interf.</h3>
+                                <p class="font-body-md text-body-md text-secondary">2026• Main Examination</p>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-2 py-1 text-[10px] font-bold border border-slate-200 text-secondary rounded uppercase">Scheme
+                                    2026</span>
+                                <span
+                                    class="px-2 py-1 text-[10px] font-bold border border-slate-200 text-secondary rounded uppercase">6th
+                                    Sem</span>
+                            </div>
+                        </div>
+                        <div
+                            class="px-6 py-4 bg-slate-50 dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center">
+                            <span class="text-xs text-secondary italic">Last updated: APR 2026</span>
+                            <button class="flex items-center gap-2 text-primary font-bold text-sm hover:underline">
+                                <span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+                                PDF (2.1 MB)
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Paper Card 5 -->
+                    <div
+                        class="group bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300">
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between items-start">
+                                <div class="bg-indigo-50 dark:bg-indigo-900/30 p-3 rounded-lg text-primary">
+                                    <span class="material-symbols-outlined"
+                                        data-icon="data_exploration">data_exploration</span>
+                                </div>
+                                <span
+                                    class="font-label-sm text-label-sm px-2 py-1 bg-surface-container rounded uppercase">CS605</span>
+                            </div>
+                            <div class="space-y-1">
+                                <h3 class="font-h3 text-h3 text-on-surface">Data Mining &amp; Warehousing</h3>
+                                <p class="font-body-md text-body-md text-secondary">2026 • Main Examination</p>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-2 py-1 text-[10px] font-bold border border-slate-200 text-secondary rounded uppercase">Scheme
+                                    2026</span>
+                                <span
+                                    class="px-2 py-1 text-[10px] font-bold border border-slate-200 text-secondary rounded uppercase">6th
+                                    Sem</span>
+                            </div>
+                        </div>
+                        <div
+                            class="px-6 py-4 bg-slate-50 dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center">
+                            <span class="text-xs text-secondary italic">Last updated: 2026</span>
+                            <button class="flex items-center gap-2 text-primary font-bold text-sm hover:underline">
+                                <span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+                                PDF (1.1 MB)
+                            </button>
+                        </div>
+                    </div>
+                    <!-- CTA / Request New -->
+                    <div
+                        class="group bg-primary-container/10 border-2 border-dashed border-primary-container/30 rounded-xl flex flex-col items-center justify-center p-8 text-center space-y-4 hover:border-primary-container transition-all">
+                        <div
+                            class="w-16 h-16 rounded-full bg-white dark:bg-slate-900 shadow-sm flex items-center justify-center text-primary">
+                            <span class="material-symbols-outlined scale-150" data-icon="add_circle">add_circle</span>
+                        </div>
+                        <div class="space-y-2">
+                            <h3 class="font-h3 text-h3 text-primary">Missing a Paper?</h3>
+                            <p class="font-body-md text-body-md text-secondary">Can't find a specific subject paper?
+                                Request it and our team will try to source it.</p>
+                        </div>
+                        <button
+                            class="bg-primary text-on-primary font-button text-button px-6 py-3 rounded-full hover:shadow-lg transition-all">
+                            Request Subject Paper
+                        </button>
+                    </div>
+                </div>
+                <!-- Bento-style Analytics/Info -->
+                <section class="grid grid-cols-1 md:grid-cols-12 gap-gutter py-8">
+                    <div class="md:col-span-8 bg-indigo-900 rounded-2xl p-8 relative overflow-hidden group">
+                        <div class="relative z-10 space-y-4">
+                            <h3 class="text-white font-h2 text-h2">Preparing for June 2026?</h3>
+                            <p class="text-indigo-200 font-body-lg text-body-lg max-w-lg">Get access to our predicted
+                                paper sets and priority notes specifically curated for the upcoming examinations.</p>
+                            <button
+                                class="bg-white text-indigo-900 font-button text-button px-8 py-4 rounded-xl hover:scale-105 active:scale-95 transition-all">View
+                                Exam Guide</button>
+                        </div>
+                        <div
+                            class="absolute right-0 top-0 h-full w-1/3 opacity-20 pointer-events-none transition-transform group-hover:scale-110 duration-700">
+                            <img alt="" class="h-full w-full object-cover"
+                                data-alt="abstract architectural geometry with strong lines and shadows in deep indigo and white tones representing academic structure and depth"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4yKk_kODNZ3JtOAJQ4eGSF5IrsqgRfFctOGPtpygDec6wNJqQCT7a-SD1eYDR8I51jcfzMLqaJ9IlOf50Z0WU0NWLfwcXdK8-itGffG5Yo66dPe88z9ymJzBQyVUG7T49DtOHecipotUdvWwuci8mTXDI56So-3DFOmIG4OlpI1h5zoIyfTVmK0pIKHmU-TeDX3HLAvWMzdQdOg4a47gG7lqoVJE2fnWSDuvceJ-CngIZH2htGPi_Tyb1uJSt2IrHTpEH0OScSiQ" />
+                        </div>
+                    </div>
+                    <div
+                        class="md:col-span-4 bg-white dark:bg-slate-950 rounded-2xl p-8 border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <h4 class="font-h3 text-h3 text-primary">Paper Stats</h4>
+                            <div class="space-y-4 pt-4">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-secondary font-medium">Total Papers</span>
+                                    <span class="text-primary font-bold">1,240+</span>
+                                </div>
+                                <div class="w-full bg-slate-100 rounded-full h-2">
+                                    <div class="bg-primary h-2 rounded-full w-4/5"></div>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-secondary font-medium">Download Success</span>
+                                    <span class="text-primary font-bold">99.8%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-[10px] text-slate-400 mt-6 leading-tight">All papers are sourced from official
+                            RGPV university archives and verified by student contributors.</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <!-- Mobile Bottom Navigation (only visible on mobile as per system rules) -->
+    <nav
+        class="md:hidden bg-white border-t border-slate-200 fixed bottom-0 w-full px-6 py-3 flex justify-between items-center z-50">
+        <button class="flex flex-col items-center gap-1 text-slate-400">
+            <span class="material-symbols-outlined" data-icon="home">home</span>
+            <span class="text-[10px] font-bold">Home</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-primary">
+            <span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+            <span class="text-[10px] font-bold">Papers</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-slate-400">
+            <span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+            <span class="text-[10px] font-bold">Notes</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-slate-400">
+            <span class="material-symbols-outlined" data-icon="person">person</span>
+            <span class="text-[10px] font-bold">Profile</span>
+        </button>
+    </nav>
+    <script>
+        const mobileMenuBtn = document.querySelector('.material-symbols-outlined[data-icon="menu"]') || document.querySelector('header button .material-symbols-outlined');
+        const sidebar = document.querySelector('aside');
+
+        if (mobileMenuBtn && sidebar) {
+            mobileMenuBtn.parentElement.addEventListener('click', () => {
+                sidebar.classList.toggle('-translate-x-full');
+                sidebar.classList.toggle('hidden');
+            });
+        }
+
+        const searchInput = document.querySelector('input[placeholder*="Search"]');
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                const term = e.target.value.toLowerCase();
+                const cards = document.querySelectorAll('.grid > div, section > div > div, .space-y-4 > div');
+
+                cards.forEach(card => {
+                    const text = card.innerText.toLowerCase();
+                    card.style.display = text.includes(term) ? '' : 'none';
+                });
+            });
+        }
+
+        document.addEventListener('click', (e) => {
+            const target = e.target.closest('button, a');
+            if (!target) return;
+
+            const text = target.innerText.toLowerCase();
+
+            if (text.includes('download')) {
+                const fileName = target.closest('div')?.querySelector('h3, h4')?.innerText || "Document";
+                showNotification(`Downloading ${fileName}...`, 'success');
+            }
+
+            if (text.includes('view') || text.includes('full notes')) {
+                const subject = target.closest('div')?.querySelector('h3')?.innerText || "Subject";
+                showNotification(`Opening ${subject} viewer...`, 'info');
+            }
+
+            if (target.innerText.match(/SEM \d+/i) || target.innerText.match(/\d+/)) {
+                const semNum = target.innerText.replace(/\D/g, "");
+                if (semNum && semNum.length <= 2) {
+                    showNotification(`Loading resources for Semester ${semNum}...`, 'info');
+                }
+            }
+        });
+
+        function showNotification(message, type) {
+            const toast = document.createElement('div');
+            toast.className = `fixed bottom-20 right-5 px-6 py-3 rounded-xl shadow-2xl text-white font-bold transition-all transform translate-y-20 z-[100]`;
+            toast.style.backgroundColor = type === 'success' ? '#1A237E' : '#515f74';
+            toast.innerText = message;
+
+            document.body.appendChild(toast);
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-20');
+            }, 100);
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-20');
+                setTimeout(() => toast.remove(), 500);
+            }, 3000);
+        }
+
+        const timeElements = document.querySelectorAll('header span, .text-sm.font-medium.gap-2 span');
+        timeElements.forEach(el => {
+            if (el.innerText.includes(':')) {
+                setInterval(() => {
+                    const now = new Date();
+                    el.innerText = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                }, 1000);
+            }
+        });
+    </script>
+</body>
+
+</html>
